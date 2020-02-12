@@ -1,8 +1,10 @@
-package com.example.schoolproject;
+package com.example.schoolproject.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.schoolproject.R;
 
 public class SigninActivity extends AppCompatActivity {
 
