@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.AdministratorActivity">
+    <Button
+        android:id="@+id/mainbuyton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="235dp" />
+    <Button
+        android:id="@+id/main2buyton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="235dp" />
+</LinearLayout>

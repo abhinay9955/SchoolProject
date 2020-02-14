@@ -3,8 +3,11 @@ package com.example.schoolproject.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -100,13 +103,21 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void SendusertoAdministratorActivity() {
+    private void SendusertoAdministratorActivity()
+    {
+        Intent adminIntent= new Intent(this,AdministratorActivity.class);
+        startActivity(adminIntent);
     }
 
     private void SendusertoTutorActivity() {
+        Intent tutorIntent= new Intent(this,TutorActivity.class);
+        startActivity(tutorIntent);
     }
 
+
     private void SendusertoParentActivity() {
+        Intent parentIntent= new Intent(this,ParentActivity.class);
+        startActivity(parentIntent);
     }
 
     private void Initialise()
@@ -115,5 +126,38 @@ public class LoginActivity extends AppCompatActivity {
         userpassword=(EditText) findViewById(R.id.loginpassworduser);
         forgotpass=(TextView) findViewById(R.id.loginforgotpassword);
         loginbutton=(Button) findViewById(R.id.loginbutton);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_options,menu);
+        return true;
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        if(item.getItemId()==R.id.course)
+        {
+            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+
+        }
+        if(item.getItemId()==R.id.location)
+        {
+            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+
+        }
+        if(item.getItemId()==R.id.contact)
+        {
+            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+
+        }
+        if(item.getItemId()==R.id.website)
+        {
+            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+
+        }
+
+        return true;
     }
 }
