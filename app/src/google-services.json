@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "692154761971",
+    "firebase_url": "https://schoolproject-54f34.firebaseio.com",
+    "project_id": "schoolproject-54f34",
+    "storage_bucket": "schoolproject-54f34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692154761971:android:0bfaa471ab329f2322ad86",
+        "android_client_info": {
+          "package_name": "com.example.schoolproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692154761971-ih3jlavit4fv3diqohhshkvfl18nugi0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0I0xG3bvdLKHulJAya4Fu2vMQ25MpWoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692154761971-ih3jlavit4fv3diqohhshkvfl18nugi0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

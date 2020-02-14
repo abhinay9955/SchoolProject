@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.LoginActivity">
+    tools:context=".Activities.LoginActivity"
+    android:background="@drawable/gradientback">
+    <TextView
+        android:id="@+id/idpo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Sign In"
+        android:textSize="60dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="italic"
+        android:textColor="#640505"/>
+    <EditText
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        android:id="@+id/emailuser"
+        android:hint="Enter your email"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/idpo"
+        android:layout_marginTop="100dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/borderbox"></EditText>
+    <EditText
+        android:padding="5dp"
+        android:id="@+id/passworduser"
+        android:hint="Enter password"
+        android:gravity="center_vertical"
+
+
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/emailuser"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="30dp"
+
+        android:background="@drawable/borderbox"></EditText>
+    <RadioGroup
+        android:id="@+id/idmpo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/passworduser"
+        android:layout_marginTop="40dp">
+        <RadioButton
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administrator"
+            android:shadowColor="#722323"
+            android:textColor="#44072C">
+
+        </RadioButton>
+        <RadioButton
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tutor"
+            android:shadowColor="#722323"
+            android:textColor="#44072C">
+
+        </RadioButton>
+        <RadioButton
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parent"
+            android:shadowColor="#722323"
+            android:textColor="#44072C">
+
+        </RadioButton>
+    </RadioGroup>
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idmpo"
+        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"
+        android:text="   LOG IN   "
+        android:textSize="35dp"
+        android:background="@drawable/buttonround"
+        android:padding="6dp"></Button>
+
+</RelativeLayout>
