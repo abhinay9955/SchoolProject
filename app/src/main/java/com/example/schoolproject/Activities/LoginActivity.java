@@ -3,6 +3,7 @@ package com.example.schoolproject.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -70,18 +71,19 @@ public class LoginActivity extends AppCompatActivity {
                                 String type=dataSnapshot.getValue(String.class);
                                 if(type.equals("Parent"))
                                 {
-                                    SendusertoParentActivity();
-
+                                    startActivity(new Intent(LoginActivity.this,ParentActivity.class));
+                                    finish();
                                     
                                 }
                                 else if(type.equals("Tutor"))
                                 {
-                                    SendusertoTutorActivity();
-
+                                     startActivity(new Intent(LoginActivity.this,TutorActivity.class));
+                                     finish();
                                 }
                                 else
                                 {
-                                    SendusertoAdministratorActivity();
+                                    startActivity(new Intent(LoginActivity.this,AdministratorActivity.class));
+                                    finish();
 
                                 }
 

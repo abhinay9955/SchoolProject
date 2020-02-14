@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -29,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     private DatabaseReference rootref;
     private RadioButton checkuser;
     private RadioGroup myradiogroup;
-    private String teacher="teacher";
+    private String user ="user";
     private ProgressDialog loading;
     private String[] users={"Tutor","Parent"};
 
@@ -84,12 +85,19 @@ public class RegisterActivity extends AppCompatActivity {
 
                             {
                                 loading.dismiss();
-                                //Toast.makeText(RegisterActivity.this, "user registered", Toast.LENGTH_SHORT).show();
                                 String userid=mAuth.getCurrentUser().getUid();
-                                Toast.makeText(RegisterActivity.this,teacher+"hfhhh", Toast.LENGTH_SHORT).show();
-                                rootref.child("users").child(userid).setValue(teacher);
-                                rootref.child(teacher).child("NAME").setValue(name);
-                              //  rootref.child("USERS").child(userid).setValue(users[Integer.parseInt(myradiogroup.getTag().toString())-1]);
+                                rootref.child("users").child(userid).setValue(user);
+                                if(user.equals("Parent"))
+                                {
+                                    startActivity(new Intent(RegisterActivity.this,ParentActivity.class));
+                                    finish();
+                                }
+                                else if(user.equals("Tutor"))
+                                {
+                                    startActivity(new Intent(RegisterActivity.this,TutorActivity.class));
+                                    finish();
+                                }
+
                             }
                             else
                                 {
@@ -97,7 +105,6 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
 
                             }
-String userid=mAuth.getCurrentUser().getUid();
                         }
                     });
 
@@ -128,14 +135,14 @@ String userid=mAuth.getCurrentUser().getUid();
         checkuser=(RadioButton) findViewById(checkid);
         if(checkuser.getText().toString().equals("Parent"))
         {
-            teacher="Parent";
+            user ="Parent";
 
         }
         else
         {
             if(checkuser.getText().toString().equals("Tutor"))
             {
-                teacher="Tutor";
+                user ="Tutor";
 
             }
         }
