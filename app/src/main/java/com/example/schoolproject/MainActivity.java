@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.schoolproject.Activities.LoginActivity;
 import com.example.schoolproject.Activities.RegisterActivity;
 import com.example.schoolproject.R;
 
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     public void sendregister(View view)
     {
         Intent intent=new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+    public void sendlogin(View view)
+    {
+        Intent intent=new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }
