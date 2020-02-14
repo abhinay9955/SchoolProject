@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/course"
+        android:title="Courses"></item>
+    <item android:id="@+id/website"
+        android:title="Website"></item>
+    <item android:id="@+id/contact"
+        android:title="Contact"></item>
+    <item android:id="@+id/location"
+        android:title="Locate us"></item>
+
+</menu>

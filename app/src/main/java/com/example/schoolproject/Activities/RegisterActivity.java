@@ -23,6 +23,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+
 public class RegisterActivity extends AppCompatActivity {
     private EditText username,useremail,userpassword,confirmpassword;
     private Button RegisterButton;
@@ -30,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
     private DatabaseReference rootref;
     private RadioButton checkuser;
     private RadioGroup myradiogroup;
-    private String user ="user";
+    private String user ="Tutor";
     private ProgressDialog loading;
     private String[] users={"Tutor","Parent"};
 
@@ -87,13 +89,25 @@ public class RegisterActivity extends AppCompatActivity {
                                 loading.dismiss();
                                 String userid=mAuth.getCurrentUser().getUid();
                                 rootref.child("users").child(userid).setValue(user);
+
                                 if(user.equals("Parent"))
                                 {
+                                    HashMap<String,Object> data=new HashMap<>();
+                                    data.put("name",username.getText().toString().trim());
+                                    data.put("email",email);
+
+                                    rootref.child("Parent").child(userid).updateChildren(data);
                                     startActivity(new Intent(RegisterActivity.this,ParentActivity.class));
                                     finish();
                                 }
                                 else if(user.equals("Tutor"))
                                 {
+                                    HashMap<String,Object> data=new HashMap<>();
+                                    data.put("name",username.getText().toString().trim());
+                                    data.put("email",email);
+
+                                    rootref.child("Tutor").child(userid).updateChildren(data);
+
                                     startActivity(new Intent(RegisterActivity.this,TutorActivity.class));
                                     finish();
                                 }
