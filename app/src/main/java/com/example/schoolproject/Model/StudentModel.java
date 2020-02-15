@@ -8,7 +8,11 @@ public class StudentModel {
     public StudentModel() {
     }
 
-    public StudentModel(String name, String id, String roll, String contact, int grade, int rank, int tdp, int twd, int std,String parent) {
+    public String getParent() {
+        return parent;
+    }
+
+    public StudentModel(String name, String id, String roll, String contact, int grade, int rank, int tdp, int twd, int std, String parent) {
         this.name = name;
         this.id = id;
         this.roll = roll;
