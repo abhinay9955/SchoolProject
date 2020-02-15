@@ -40,13 +40,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/loginpassworduser"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:layout_centerInParent="true"
-        android:text="   LOG IN  "
-        android:textStyle="italic"
-        android:textSize="28dp"
         android:background="@drawable/buttonround"
-        android:padding="6dp"></Button>
+        android:padding="6dp"
+        android:text="   LOG IN  "
+        android:textSize="28dp"
+        android:textStyle="italic"></Button>
 
     <TextView
         android:id="@+id/loginforgotpassword"
@@ -57,5 +57,22 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="5dp"
         android:textColor="#A218BB"/>
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="294dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="137dp"
+        android:gravity="center"
+        android:text="New user? create user" />
 
 </RelativeLayout>

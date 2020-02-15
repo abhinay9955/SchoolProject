@@ -3,6 +3,7 @@ package com.example.schoolproject.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -27,10 +28,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText useremail,userpassword;
-    private TextView forgotpass;
+    private TextView forgotpass,createuser;
     private Button loginbutton;
     private FirebaseAuth mAuth;
     private DatabaseReference rootref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +41,26 @@ public class LoginActivity extends AppCompatActivity {
 
         Initialise();
         mAuth=FirebaseAuth.getInstance();
-        rootref= FirebaseDatabase.getInstance().getReference();
+        rootref= FirebaseDatabase.getInstance().getReference("users");
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 loginuser();
+            }
+        });
+
+        createuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                finish();
+            }
+        });
+
+        forgotpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
@@ -104,29 +121,13 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void SendusertoAdministratorActivity()
-    {
-        Intent adminIntent= new Intent(this,AdministratorActivity.class);
-        startActivity(adminIntent);
-    }
-
-    private void SendusertoTutorActivity() {
-        Intent tutorIntent= new Intent(this,TutorActivity.class);
-        startActivity(tutorIntent);
-    }
-
-
-    private void SendusertoParentActivity() {
-        Intent parentIntent= new Intent(this,ParentActivity.class);
-        startActivity(parentIntent);
-    }
-
     private void Initialise()
     {
         useremail=(EditText) findViewById(R.id.loginemail);
         userpassword=(EditText) findViewById(R.id.loginpassworduser);
         forgotpass=(TextView) findViewById(R.id.loginforgotpassword);
         loginbutton=(Button) findViewById(R.id.loginbutton);
+        createuser=findViewById(R.id.register);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -145,12 +146,22 @@ public class LoginActivity extends AppCompatActivity {
         }
         if(item.getItemId()==R.id.location)
         {
-            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
-
+             startActivity(new Intent(LoginActivity.this,MapActivity.class));
         }
         if(item.getItemId()==R.id.contact)
         {
-            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+            final Dialog dialog=new Dialog(LoginActivity.this);
+            dialog.setContentView(R.layout.contact_dialog);
+            TextView ok;
+            ok=dialog.findViewById(R.id.ok);
+            ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+
 
         }
         if(item.getItemId()==R.id.website)
