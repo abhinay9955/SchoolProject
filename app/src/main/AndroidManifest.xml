@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.AddChildActivity"></activity>
         <activity android:name=".Activities.TutorActivity$AddChildActivity" />
-        <activity android:name=".Activities.PTAActivity" />
+        <activity android:name=".Activities.AdminstratorPTAActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

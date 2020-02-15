@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginbutton;
     private FirebaseAuth mAuth;
     private DatabaseReference rootref;
+    ProgressDialog progressDialog;
 
 
     @Override
@@ -40,6 +43,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Initialise();
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setTitle("Logging you in");
+        progressDialog.setMessage("Please wait...");
+        progressDialog.setCancelable(false);
         mAuth=FirebaseAuth.getInstance();
         rootref= FirebaseDatabase.getInstance().getReference("users");
         loginbutton.setOnClickListener(new View.OnClickListener() {
@@ -67,21 +74,25 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginuser()
     {
+        progressDialog.show();
         final String  name,email,password;
-        password=useremail.getText().toString();
-        email=userpassword.getText().toString();
+        password=userpassword.getText().toString();
+        email=useremail.getText().toString();
         if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password))
         {
             Toast.makeText(this, "fill the fields first", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
         }
         else
         {
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task)
-                {
+                {     Log.i( "onComplete: ","logg");
                     if(task.isSuccessful())
                     {
+                        Log.i( "onComplete: ","login");
+
                         String userid=mAuth.getCurrentUser().getUid();
                         rootref.child(userid).addValueEventListener(new ValueEventListener() {
                             @Override
@@ -106,14 +117,21 @@ public class LoginActivity extends AppCompatActivity {
 
                                 }
 
+                                progressDialog.dismiss();
+
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
                                 Toast.makeText(LoginActivity.this, "Erroe occured", Toast.LENGTH_SHORT).show();
-
+                                progressDialog.dismiss();
                             }
                         });
+                    }
+                    else
+                    {
+                        Toast.makeText(LoginActivity.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                        progressDialog.dismiss();
                     }
 
                 }

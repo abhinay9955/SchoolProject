@@ -38,47 +38,71 @@
         app:layout_constraintGuide_percent="1" />
 
     <Button
-        android:id="@+id/Add Child"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/addchild"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="132dp"
-        android:text="Button"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#3B5998 "
+        android:text="Add Child"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/tutor"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="70dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#3B5998 "
         android:text="Manage Tutor"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Add Child" />
+        app:layout_constraintTop_toBottomOf="@+id/addchild" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/parent"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="70dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#3B5998 "
         android:text="Manage Parent"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/tutor" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/pta"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="70dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#3B5998 "
         android:text="PTA Info"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/parent"
         app:layout_constraintVertical_bias="0.029" />
 </androidx.constraintlayout.widget.ConstraintLayout>
