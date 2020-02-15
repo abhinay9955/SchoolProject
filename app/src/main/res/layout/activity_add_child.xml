@@ -1,13 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".Utils.AddChildActivity">
-=======
-    tools:context=".Activities.TutorActivity$AddChildActivity">
->>>>>>> 7aa39df8cdd8a36267a6a14775cfe4791cc87f26
+    android:background="@drawable/gradientback2"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".Activities.AddChildActivity">
+    <TextView
+        android:id="@+id/textaddchild"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Add Child :-)  "
+        android:textSize="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/borderboxtext"></TextView>
+    <LinearLayout
+        android:id="@+id/layout_fill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/textaddchild"
+        android:layout_marginTop="60dp">
+
+        <EditText
+
+            android:id="@+id/addchild_name"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:background="@drawable/borderbox"
+            android:hint="Enter Child name"
+            android:paddingLeft="10dp"
+            android:requiresFadingEdge="horizontal"></EditText>
+
+        <EditText
+
+            android:id="@+id/addchild_class"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+
+            android:background="@drawable/borderbox"
+            android:hint="Enter Class"
+            android:paddingLeft="10dp"
+            android:requiresFadingEdge="horizontal"></EditText>
+
+        <EditText
+
+            android:id="@+id/addchild_roll"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+
+            android:background="@drawable/borderbox"
+            android:hint="Enter Roll no."
+            android:paddingLeft="10dp"
+            android:requiresFadingEdge="horizontal"></EditText>
+
+        <EditText
+
+            android:id="@+id/addchild_guardian"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+
+            android:background="@drawable/borderbox"
+            android:hint="Enter Guardian Name"
+            android:paddingLeft="10dp"
+
+            android:requiresFadingEdge="horizontal"></EditText>
+
+        <EditText
+
+            android:id="@+id/addchild_contact"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+
+            android:background="@drawable/borderbox"
+            android:hint="Enter Contact no."
+            android:paddingLeft="10dp"
+
+            android:requiresFadingEdge="horizontal"></EditText>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/addchildbutton"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/layout_fill"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp"
+        android:background="#27FC01"
+        android:text=" Register "
+        android:textSize="20dp"
+        android:textStyle="bold"></Button>
+
+</RelativeLayout>
