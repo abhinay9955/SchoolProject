@@ -11,23 +11,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.schoolproject.Model.PTModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapterPT extends RecyclerView.Adapter<MyAdapterPT.ViewHolder>
 
 
 {
-    private List<PTModel> ptList;
+    private ArrayList<PTModel> ptList;
     private Context ctx;
 
-    public MyAdapterPT(List<PTModel> ptList, Context ctx) {
+    public MyAdapterPT(ArrayList<PTModel> ptList) {
         this.ptList = ptList;
-        this.ctx = ctx;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        this.ctx=parent.getContext();
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ptmitemlayout,parent,false);
         return new ViewHolder(v);

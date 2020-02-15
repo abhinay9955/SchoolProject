@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,9 +22,9 @@ public class TutorActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
     }
 
-<<<<<<< HEAD
 
-=======
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -45,5 +46,10 @@ public class TutorActivity extends AppCompatActivity {
 
         return true;
     }
->>>>>>> 2a989ce87a99f7ddd9495f3419b22c886f81a038
+
+    public void sendptactivity(View view)
+    {
+        Intent intent=new Intent(TutorActivity.this,PtmActivity.class);
+        startActivity(intent);
+    }
 }
