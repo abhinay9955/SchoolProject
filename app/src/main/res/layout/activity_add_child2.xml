@@ -4,10 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".Utils.AddChildActivity">
-=======
-    tools:context=".Activities.TutorActivity$AddChildActivity">
->>>>>>> 7aa39df8cdd8a36267a6a14775cfe4791cc87f26
+    tools:context=".Activities.AddChildActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
