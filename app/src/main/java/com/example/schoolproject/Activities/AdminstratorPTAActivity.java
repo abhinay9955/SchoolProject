@@ -3,6 +3,7 @@ package com.example.schoolproject.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -13,11 +14,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.schoolproject.R;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class AdminstratorPTAActivity extends AppCompatActivity {
 
@@ -26,6 +30,7 @@ public class AdminstratorPTAActivity extends AppCompatActivity {
     EditText mclass,mroom;
     Spinner duration;
     String[] durations={"1/2 Hour","1 Hour","1 and 1/2 Hour", "2 Hour"};
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +50,28 @@ public class AdminstratorPTAActivity extends AppCompatActivity {
              }
          });
 
+         submit.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 if(validate())
+                 {
+                     progressDialog.show();
+                     HashMap<String,Object> data=new HashMap<>();
+                     data.put("time",time_tv.getText().toString());
+                     data.put("std",mclass.getText().toString());
+                     data.put("room",mroom.getText().toString());
+                     data.put("duration",duration.getSelectedItem().toString());
+                     FirebaseDatabase.getInstance().getReference("pta").push().updateChildren(data);
+                     progressDialog.dismiss();
+                     finish();
 
+                 }
+                 else
+                 {
+                     Toast.makeText(AdminstratorPTAActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                 }
+             }
+         });
 
     }
 
@@ -59,7 +85,23 @@ public class AdminstratorPTAActivity extends AppCompatActivity {
         mclass=findViewById(R.id.mclass);
         mroom=findViewById(R.id.room);
         duration=findViewById(R.id.duration);
+        progressDialog=new ProgressDialog(AdminstratorPTAActivity.this);
+        progressDialog.setMessage("Uploading...");
+        progressDialog.setCancelable(false);
     }
+
+    public boolean validate()
+    {
+        String cls=mclass.getText().toString().trim();
+        String rm=mroom.getText().toString().trim();
+        String time= time_tv.getText().toString().trim();
+
+        if(cls.equals("") || rm.equals("") || time.equals(""))
+            return false;
+        return true;
+    }
+
+
 
     public void showDateTime()
     {

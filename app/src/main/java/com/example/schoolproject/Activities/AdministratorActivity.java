@@ -24,7 +24,12 @@ public class AdministratorActivity extends AppCompatActivity {
         parent=findViewById(R.id.parent);
         pta=findViewById(R.id.pta);
 
-
+        addchild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdministratorActivity.this,AddChildActivity.class));
+            }
+        });
 
         pta.setOnClickListener(new View.OnClickListener() {
             @Override

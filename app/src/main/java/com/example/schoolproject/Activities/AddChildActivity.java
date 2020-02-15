@@ -19,28 +19,30 @@ public class AddChildActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_child);
-<<<<<<< HEAD
-=======
         Initialise();
+
+        getSupportActionBar().hide();
+
         registerchildbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerchild();
+                if(validate())
+                {
+
+                }
             }
         });
     }
 
-    private void registerchild()
+    private boolean validate()
     {
         if(TextUtils.isEmpty(childname.getText().toString()) || TextUtils.isEmpty(childclass.getText().toString()) || TextUtils.isEmpty(childcontact.getText().toString()) ||
                 TextUtils.isEmpty(childparent.getText().toString()) || TextUtils.isEmpty(childroll.getText().toString()))
         {
-            Toast.makeText(this, "Fill the recquired information", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddChildActivity.this, "Fill the recquired information", Toast.LENGTH_SHORT).show();
+            return false;
         }
-        else
-        {
-
-        }
+       return true;
     }
 
     private void Initialise()
@@ -52,6 +54,5 @@ public class AddChildActivity extends AppCompatActivity {
         childroll=(EditText)findViewById(R.id.addchild_roll);
         registerchildbutton=(Button)findViewById(R.id.addchildbutton);
 
->>>>>>> 2a989ce87a99f7ddd9495f3419b22c886f81a038
     }
 }
