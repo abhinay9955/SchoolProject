@@ -74,7 +74,9 @@
         android:hint="Class"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
+        android:textColor="@color/cardview_light_background"
         android:textColorHint="@color/cardview_light_background"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/room" />

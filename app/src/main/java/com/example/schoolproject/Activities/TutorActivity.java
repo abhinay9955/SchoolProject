@@ -38,8 +38,9 @@ public class TutorActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.signouttutor)
         {
             mAuth.signOut();
-            Intent intent=new Intent(this,LoginActivity.class);
+            Intent intent=new Intent(TutorActivity.this,LoginActivity.class);
             startActivity(intent);
+            finish();
 
         }
 
@@ -52,4 +53,5 @@ public class TutorActivity extends AppCompatActivity {
         Intent intent=new Intent(TutorActivity.this,PtmActivity.class);
         startActivity(intent);
     }
+
 }

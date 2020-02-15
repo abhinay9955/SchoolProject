@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.example.schoolproject.R;
 
+import java.util.HashMap;
+
 public class AddChildActivity extends AppCompatActivity {
     private EditText childname,childparent,childcontact,childclass,childroll;
     private Button registerchildbutton;
@@ -19,28 +21,36 @@ public class AddChildActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_child);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f7246f2ffb2c4548b9dac2aa8defc205e667cda4
         Initialise();
+
+        getSupportActionBar().hide();
+
         registerchildbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerchild();
+                if(validate())
+                {
+                    String name,parent,roll,id;
+                    int std,contact,grade,rank,tdp,twd,
+                }
             }
         });
     }
 
-    private void registerchild()
+    private boolean validate()
     {
         if(TextUtils.isEmpty(childname.getText().toString()) || TextUtils.isEmpty(childclass.getText().toString()) || TextUtils.isEmpty(childcontact.getText().toString()) ||
                 TextUtils.isEmpty(childparent.getText().toString()) || TextUtils.isEmpty(childroll.getText().toString()))
         {
-            Toast.makeText(this, "Fill the recquired information", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddChildActivity.this, "Fill the recquired information", Toast.LENGTH_SHORT).show();
+            return false;
         }
-        else
-        {
-
-        }
+       return true;
     }
 
     private void Initialise()
@@ -51,5 +61,6 @@ public class AddChildActivity extends AppCompatActivity {
         childparent=(EditText)findViewById(R.id.addchild_guardian);
         childroll=(EditText)findViewById(R.id.addchild_roll);
         registerchildbutton=(Button)findViewById(R.id.addchildbutton);
+
     }
 }
