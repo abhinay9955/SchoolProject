@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddChildActivity"></activity>
+        <activity android:name=".Activities.TutorActivity$AddChildActivity"></activity>
         <activity android:name=".Activities.PTAActivity" />
 
         <meta-data
