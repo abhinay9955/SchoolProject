@@ -21,11 +21,9 @@ public class AddChildActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_child);
-<<<<<<< HEAD
 
 
-=======
->>>>>>> f7246f2ffb2c4548b9dac2aa8defc205e667cda4
+
         Initialise();
 
         getSupportActionBar().hide();
@@ -36,7 +34,7 @@ public class AddChildActivity extends AppCompatActivity {
                 if(validate())
                 {
                     String name,parent,roll,id;
-                    int std,contact,grade,rank,tdp,twd,
+                    int std,contact,grade,rank,tdp,twd;
                 }
             }
         });

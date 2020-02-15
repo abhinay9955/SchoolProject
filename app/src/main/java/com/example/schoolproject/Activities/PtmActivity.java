@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.schoolproject.Model.PTModel;
 import com.example.schoolproject.MyAdapterPT;
@@ -15,7 +16,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class PtmActivity extends AppCompatActivity {
 
@@ -36,10 +39,14 @@ public class PtmActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 data.clear();
+                Date cur=new Date();
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     PTModel pt=ds.getValue(PTModel.class);
-                    data.add(pt);
+                    Date date=new Date(pt.getTime());
+                    Log.i("onDataChange: ",cur.toString()+" / "+date.toString());
+                    if(date.after(cur))
+                       data.add(pt);
                 }
                 ptadapter.notifyDataSetChanged();
 

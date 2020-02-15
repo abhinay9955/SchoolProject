@@ -5,11 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.PtmActivity"
+    android:background="@drawable/gradientback"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="hii ptm here"></TextView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_ptm"
         android:layout_width="match_parent"

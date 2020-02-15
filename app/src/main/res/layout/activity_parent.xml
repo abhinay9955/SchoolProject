@@ -6,12 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Activities.ParentActivity"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/class_titles"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/button_ll"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Add child"></Button>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="book appointment"></Button>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="book appointment"></Button>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_pa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hii"
-        android:textSize="25dp"
-        ></TextView>
+        ></androidx.recyclerview.widget.RecyclerView>
+
+
+
+
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.schoolproject;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +49,9 @@ public class MyAdapterPT extends RecyclerView.Adapter<MyAdapterPT.ViewHolder>
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
+        Log.i("getItemCount: ",ptList.size()+"");
         return ptList.size();
     }
 
