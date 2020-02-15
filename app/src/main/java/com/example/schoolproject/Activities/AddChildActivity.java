@@ -19,8 +19,8 @@ public class AddChildActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_child);
-<<<<<<< HEAD
-=======
+
+
         Initialise();
         registerchildbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +51,5 @@ public class AddChildActivity extends AppCompatActivity {
         childparent=(EditText)findViewById(R.id.addchild_guardian);
         childroll=(EditText)findViewById(R.id.addchild_roll);
         registerchildbutton=(Button)findViewById(R.id.addchildbutton);
-
->>>>>>> 2a989ce87a99f7ddd9495f3419b22c886f81a038
     }
 }

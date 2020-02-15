@@ -41,6 +41,7 @@ public class PtmActivity extends AppCompatActivity {
                     PTModel pt=ds.getValue(PTModel.class);
                     data.add(pt);
                 }
+                ptadapter.notifyDataSetChanged();
 
 
             }
@@ -50,6 +51,7 @@ public class PtmActivity extends AppCompatActivity {
 
             }
         });
+        mRecyclerView.setAdapter(ptadapter);
 
 
     }
