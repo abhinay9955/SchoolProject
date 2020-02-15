@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.example.schoolproject.R;
 
+import java.util.HashMap;
+
 public class AddChildActivity extends AppCompatActivity {
     private EditText childname,childparent,childcontact,childclass,childroll;
     private Button registerchildbutton;
@@ -28,7 +30,8 @@ public class AddChildActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(validate())
                 {
-
+                    String name,parent,roll,id;
+                    int std,contact,grade,rank,tdp,twd,
                 }
             }
         });
