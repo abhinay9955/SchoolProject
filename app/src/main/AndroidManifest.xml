@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAf4f6skCx_sv5mtWFfgkiiXmsoKoIflMU"/>
-        <activity android:name=".Activities.MapActivity"></activity>
+        <activity android:name=".AddChildActivity"></activity>
+        <activity android:name=".Activities.PTAActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAf4f6skCx_sv5mtWFfgkiiXmsoKoIflMU" />
+
+        <activity android:name=".Activities.MapActivity" />
         <activity android:name=".Activities.AdministratorActivity" />
         <activity android:name=".Activities.TutorActivity" />
         <activity android:name=".Activities.ParentActivity" />
