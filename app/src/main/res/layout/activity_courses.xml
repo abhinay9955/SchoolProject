@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ParentActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activities.CoursesActivity">
     <TextView
-        android:id="@+id/class_titles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hii"
-        android:textSize="25dp"
-        ></TextView>
+        android:text="Courses.."
+        android:textSize="20dp"></TextView>
+    <ExpandableListView
+        android:id="@+id/exp_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

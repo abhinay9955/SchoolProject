@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ParentActivity"
     android:orientation="vertical">
     <TextView
         android:id="@+id/class_titles"
@@ -12,6 +11,6 @@
         android:layout_height="wrap_content"
         android:text="hii"
         android:textSize="25dp"
-        ></TextView>
+        />
 
 </LinearLayout>

@@ -140,7 +140,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         if(item.getItemId()==R.id.course)
         {
-            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(this,CoursesActivity.class);
+            startActivity(intent);
 
         }
         if(item.getItemId()==R.id.location)
