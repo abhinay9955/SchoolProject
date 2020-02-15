@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.CoursesActivity"></activity>
-        <activity android:name=".AddChildActivity"></activity>
+        <activity android:name=".Utils.AddChildActivity"></activity>
         <activity android:name=".Activities.PTAActivity" />
 
         <meta-data
