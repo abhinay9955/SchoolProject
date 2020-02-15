@@ -43,7 +43,7 @@
             android:textColorHint="@color/cardview_light_background"
             android:textSize="24sp"></EditText>
 
-        <EditText
+        <Spinner
 
             android:id="@+id/addchild_class"
 
@@ -59,7 +59,7 @@
             android:requiresFadingEdge="horizontal"
             android:textColor="@color/cardview_light_background"
             android:textColorHint="@color/cardview_light_background"
-            android:textSize="24sp"></EditText>
+            android:textSize="24sp"/>
 
         <EditText
 

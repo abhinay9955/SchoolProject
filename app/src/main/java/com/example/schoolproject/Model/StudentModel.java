@@ -2,13 +2,13 @@ package com.example.schoolproject.Model;
 
 public class StudentModel {
 
-    String name,id,roll,parent;
-    int contact,grade,rank,tdp,twd,std;
+    String name,id,roll,parent,contact;
+    int grade,rank,tdp,twd,std;
 
     public StudentModel() {
     }
 
-    public StudentModel(String name, String id, String roll, int contact, int grade, int rank, int tdp, int twd, int std,String parent) {
+    public StudentModel(String name, String id, String roll, String contact, int grade, int rank, int tdp, int twd, int std,String parent) {
         this.name = name;
         this.id = id;
         this.roll = roll;
@@ -33,7 +33,7 @@ public class StudentModel {
         return roll;
     }
 
-    public int getContact() {
+    public String getContact() {
         return contact;
     }
 
