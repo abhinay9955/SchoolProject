@@ -10,12 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.CoursesActivity"></activity>
+        <activity android:name=".AddChildActivity"></activity>
+        <activity android:name=".Activities.PTAActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAf4f6skCx_sv5mtWFfgkiiXmsoKoIflMU" />
+
+        <activity android:name=".Activities.MapActivity" />
         <activity android:name=".Activities.AdministratorActivity" />
         <activity android:name=".Activities.TutorActivity" />
         <activity android:name=".Activities.ParentActivity" />
         <activity android:name=".Activities.RegisterActivity" />
         <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.SigninActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
