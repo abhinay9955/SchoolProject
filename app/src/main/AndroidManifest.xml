@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Activities.Administrator.TutorInfo"></activity>
         <activity android:name=".Activities.Parent.BookActivity" />
+        <activity android:name=".Activities.Tutor.UpdateChildInfoActivity"></activity>
+        <activity android:name=".Activities.Tutor.TutorAppointmentActivity" />
+
         <activity android:name=".Activities.Parent.NewChildActivity" />
         <activity android:name=".Activities.Parent.PtmActivity" />
         <activity android:name=".Activities.General.CoursesActivity" />

@@ -28,7 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText username,useremail,userpassword,confirmpassword;
+    private EditText username,useremail,userpassword,confirmpassword,TutorID,contactno;
     private Button RegisterButton;
     private FirebaseAuth mAuth;
     private DatabaseReference rootref;
@@ -59,12 +59,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void registerUser()
     {
-        final String  name,email,password1,password2;
+        final String  name,email,password1,password2,tutorid,contact;
         name=username.getText().toString();
         email=useremail.getText().toString();
         password1=userpassword.getText().toString();
         password2=confirmpassword.getText().toString();
-        if(TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password1) || TextUtils.isEmpty(password2) )
+        contact=contactno.getText().toString();
+        tutorid=TutorID.getText().toString();
+        if(TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password1) || TextUtils.isEmpty(contact) || TextUtils.isEmpty(password2) || (TutorID.isEnabled() && TextUtils.isEmpty(TutorID.getText().toString())))
         {
             Toast.makeText(this, "Fill the fields properly", Toast.LENGTH_SHORT).show();
         }
@@ -97,6 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     HashMap<String,Object> data=new HashMap<>();
                                     data.put("name",username.getText().toString().trim());
                                     data.put("email",email);
+                                    data.put("contact",contact);
 
                                     rootref.child("Parent").child(userid).updateChildren(data);
                                     startActivity(new Intent(RegisterActivity.this, ParentActivity.class));
@@ -107,6 +110,8 @@ public class RegisterActivity extends AppCompatActivity {
                                     HashMap<String,Object> data=new HashMap<>();
                                     data.put("name",username.getText().toString().trim());
                                     data.put("email",email);
+                                    data.put("tutorid",TutorID.getText().toString());
+                                    data.put("contact",contact);
 
                                     rootref.child("Tutor").child(userid).updateChildren(data);
 
@@ -140,6 +145,8 @@ public class RegisterActivity extends AppCompatActivity {
         confirmpassword=(EditText) findViewById(R.id.registerconfirmpassword);
         myradiogroup=(RadioGroup)findViewById(R.id.regiseterradiogroup);
         RegisterButton=(Button) findViewById(R.id.registerbutton);
+        TutorID=(EditText)findViewById(R.id.registertutorid);
+        contactno=(EditText) findViewById(R.id.registercontact);
 
 
     }
@@ -151,6 +158,7 @@ public class RegisterActivity extends AppCompatActivity {
         checkuser=(RadioButton) findViewById(checkid);
         if(checkuser.getText().toString().equals("Parent"))
         {
+            TutorID.setEnabled(false);
             user ="Parent";
 
         }
@@ -158,6 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
         {
             if(checkuser.getText().toString().equals("Tutor"))
             {
+                TutorID.setEnabled(true);
                 user ="Tutor";
 
             }
