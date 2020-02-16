@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Tutor.TutorActivity">
+    tools:context=".Activities.Tutor.TutorActivity"
+    android:background="@drawable/gradientback"
+    >
     <Button
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:text="jjjsjjs"
-        android:onClick="sendptactivity"></Button>
+        android:id="@+id/update_child_info"
+        android:text="CHILD DATA"
+        android:textSize="30dp"
+        android:background="#3B5998 "
+        android:layout_width="200dp"
+        android:onClick="ChildDataclicked"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"></Button>
+    <Button
+        android:id="@+id/tutor_pt_meetings"
+        android:text="P-T meets"
+        android:layout_below="@+id/update_child_info"
+        android:textSize="30dp"
+        android:background="#3B5998 "
+        android:layout_width="200dp"
+        android:onClick="PTmeetclicked"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"></Button>
+    <Button
+        android:id="@+id/tutor_appointment"
+        android:text="Appointments"
+        android:onClick="SeeAppointmentclicked"
+        android:textSize="25dp"
+        android:background="#3B5998 "
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/tutor_pt_meetings"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"></Button>
 
-</LinearLayout>
+
+
+
+
+
+</RelativeLayout>

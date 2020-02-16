@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.Parent.PtmActivity;
@@ -30,14 +31,14 @@ public class TutorActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.tutormenu,menu);
+        getMenuInflater().inflate(R.menu.tutormenunew,menu);
         return true;
 
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
-        if(item.getItemId()==R.id.signouttutor)
+        if(item.getItemId()==R.id.signouttutornew)
         {
             mAuth.signOut();
             Intent intent=new Intent(TutorActivity.this, LoginActivity.class);
@@ -45,15 +46,28 @@ public class TutorActivity extends AppCompatActivity {
             finish();
 
         }
+        if(item.getItemId()==R.id.tutor_shedule)
+        {
+            Toast.makeText(TutorActivity.this, "this will open shedule list", Toast.LENGTH_SHORT).show();
+        }
 
 
         return true;
     }
 
-    public void sendptactivity(View view)
-    {
-        Intent intent=new Intent(TutorActivity.this, PtmActivity.class);
-        startActivity(intent);
+
+    public void ChildDataclicked(View view) {
+        Intent inten1 = new Intent(TutorActivity.this,UpdateChildInfoActivity.class);
+        startActivity(inten1);
     }
 
+    public void PTmeetclicked(View view) {
+        Intent inten = new Intent(TutorActivity.this,PtmActivity.class);
+        startActivity(inten);
+    }
+
+    public void SeeAppointmentclicked(View view) {
+        Intent intent= new Intent(TutorActivity.this,TutorAppointmentActivity.class);
+        startActivity(intent);
+    }
 }
