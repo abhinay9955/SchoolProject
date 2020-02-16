@@ -3,18 +3,13 @@ package com.example.schoolproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.example.schoolproject.Activities.AdministratorActivity;
-import com.example.schoolproject.Activities.LoginActivity;
-import com.example.schoolproject.Activities.MapActivity;
-import com.example.schoolproject.Activities.ParentActivity;
-import com.example.schoolproject.Activities.RegisterActivity;
-import com.example.schoolproject.Activities.TutorActivity;
-import com.example.schoolproject.R;
+import com.example.schoolproject.Activities.Administrator.AdministratorActivity;
+import com.example.schoolproject.Activities.General.LoginActivity;
+import com.example.schoolproject.Activities.Parent.ParentActivity;
+import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

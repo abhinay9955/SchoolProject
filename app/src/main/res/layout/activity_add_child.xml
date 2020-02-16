@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradientback"
 
-    tools:context=".Activities.AddChildActivity">
+    tools:context=".Activities.Administrator.AddChildActivity">
 
     <TextView
         android:id="@+id/textaddchild"

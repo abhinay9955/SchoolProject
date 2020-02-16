@@ -1,4 +1,4 @@
-package com.example.schoolproject.Activities;
+package com.example.schoolproject.Activities.Administrator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.schoolproject.Activities.General.LoginActivity;
+import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -33,17 +35,20 @@ public class AdministratorActivity extends AppCompatActivity {
         addchild.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdministratorActivity.this,AddChildActivity.class));
+                startActivity(new Intent(AdministratorActivity.this, AddChildActivity.class));
             }
         });
 
         pta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdministratorActivity.this,AdminstratorPTAActivity.class));
+                startActivity(new Intent(AdministratorActivity.this, AdminstratorPTAActivity.class));
             }
         });
     }
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -56,8 +61,11 @@ public class AdministratorActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         if(item.getItemId()==R.id.signouttutor)
         {
+
             mAuth.signOut();
             Intent intent=new Intent(AdministratorActivity.this,LoginActivity.class);
+
+
             startActivity(intent);
             finish();
 

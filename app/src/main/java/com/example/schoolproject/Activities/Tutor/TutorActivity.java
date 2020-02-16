@@ -1,4 +1,4 @@
-package com.example.schoolproject.Activities;
+package com.example.schoolproject.Activities.Tutor;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.schoolproject.Activities.General.LoginActivity;
+import com.example.schoolproject.Activities.Parent.PtmActivity;
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -38,7 +40,7 @@ public class TutorActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.signouttutor)
         {
             mAuth.signOut();
-            Intent intent=new Intent(TutorActivity.this,LoginActivity.class);
+            Intent intent=new Intent(TutorActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
 
@@ -50,7 +52,7 @@ public class TutorActivity extends AppCompatActivity {
 
     public void sendptactivity(View view)
     {
-        Intent intent=new Intent(TutorActivity.this,PtmActivity.class);
+        Intent intent=new Intent(TutorActivity.this, PtmActivity.class);
         startActivity(intent);
     }
 

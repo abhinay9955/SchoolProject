@@ -41,11 +41,11 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder>
         StudentModel modeltemp=mylist.get(position);
         holder.vhchildname.setText(modeltemp.getName());
         holder.vhchildparenntname.setText(modeltemp.getParent());
-        holder.vhchildrank.setText(modeltemp.getRank());
-        holder.vhchildtwd.setText(modeltemp.getTwd());
-        holder.vhchildtpd.setText(modeltemp.getTdp());
+        holder.vhchildrank.setText((modeltemp.getRank()==-1?"N/A":modeltemp.getRank()+""));
+        holder.vhchildtwd.setText((modeltemp.getTwd()==-1?"N/A":modeltemp.getTwd()+""));
+        holder.vhchildtpd.setText((modeltemp.getTdp()==-1?"N/A":modeltemp.getTdp()+""));
         holder.vhchildroll.setText(modeltemp.getRoll());
-        holder.vhchildgrade.setText(modeltemp.getGrade());
+        holder.vhchildgrade.setText((modeltemp.getGrade()==-1?"N/A":modeltemp.getGrade()+""));
         holder.vhchildcontact.setText(modeltemp.getContact());
         holder.vhchildclass.setText(modeltemp.getStd());
 

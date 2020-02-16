@@ -4,35 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ParentActivity"
+    tools:context=".Activities.Parent.ParentActivity"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/button_ll"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addchild"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Add child"></Button>
+
+        <Button
+            android:id="@+id/ptm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="PTM List"></Button>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/button_ll"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
+
         <Button
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Add child"></Button>
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="book appointment"></Button>
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="book appointment"></Button>
+            android:id="@+id/book"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Book Appointment" />
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_pa"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ></androidx.recyclerview.widget.RecyclerView>
-
-
-
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
