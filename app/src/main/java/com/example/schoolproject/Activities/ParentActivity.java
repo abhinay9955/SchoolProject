@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.schoolproject.Model.PTModel;
 import com.example.schoolproject.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,6 +27,7 @@ public class ParentActivity extends AppCompatActivity {
     ArrayList<String> classes;
     ProgressDialog progressDialog;
     ArrayList<PTModel> children;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,7 @@ public class ParentActivity extends AppCompatActivity {
         data=new HashMap<>();
         children=new ArrayList<>();
         classes=new ArrayList<>();
+        mAuth=FirebaseAuth.getInstance();
         FirebaseDatabase.getInstance().getReference("students").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -94,4 +100,28 @@ public class ParentActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.tutormenu,menu);
+        return true;
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        if(item.getItemId()==R.id.signouttutor)
+        {
+            mAuth.signOut();
+            Intent intent=new Intent(ParentActivity.this,LoginActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
+
+
+        return true;
+    }
 }
+

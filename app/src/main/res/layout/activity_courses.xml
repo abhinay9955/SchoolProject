@@ -5,15 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activities.CoursesActivity">
+    tools:context=".Activities.CoursesActivity"
+    android:background="@drawable/gradientback">
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="69dp"
         android:text="Courses.."
-        android:textSize="20dp"></TextView>
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:padding="15dp"
+        ></TextView>
     <ExpandableListView
         android:id="@+id/exp_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        />
 
 </LinearLayout>
