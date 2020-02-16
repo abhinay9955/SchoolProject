@@ -1,4 +1,4 @@
-package com.example.schoolproject.Activities;
+package com.example.schoolproject.Utils;
 
 import android.content.Context;
 import android.util.Log;
@@ -23,7 +23,7 @@ public class Expandalelistadapter extends BaseExpandableListAdapter
     {
 
     }
-    Expandalelistadapter(Context ctx,List<String> Class_titles,HashMap<String,List<String>> Course_titles)
+    public Expandalelistadapter(Context ctx, List<String> Class_titles, HashMap<String, List<String>> Course_titles)
     {
         this.Class_titles=Class_titles;
         this.ctx=ctx;

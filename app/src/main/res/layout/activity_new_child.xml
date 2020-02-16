@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Tutor.TutorActivity">
-    <Button
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:text="jjjsjjs"
-        android:onClick="sendptactivity"></Button>
+    android:orientation="vertical"
+    tools:context=".Activities.Parent.NewChildActivity">
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
 </LinearLayout>

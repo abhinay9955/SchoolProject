@@ -1,4 +1,4 @@
-package com.example.schoolproject.Activities;
+package com.example.schoolproject.Activities.General;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolproject.Activities.Administrator.AdministratorActivity;
+import com.example.schoolproject.Activities.Parent.ParentActivity;
+import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.example.schoolproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -59,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         createuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 finish();
             }
         });
@@ -101,18 +104,18 @@ public class LoginActivity extends AppCompatActivity {
                                 String type=dataSnapshot.getValue(String.class);
                                 if(type.equals("Parent"))
                                 {
-                                    startActivity(new Intent(LoginActivity.this,ParentActivity.class));
+                                    startActivity(new Intent(LoginActivity.this, ParentActivity.class));
                                     finish();
                                     
                                 }
                                 else if(type.equals("Tutor"))
                                 {
-                                     startActivity(new Intent(LoginActivity.this,TutorActivity.class));
+                                     startActivity(new Intent(LoginActivity.this, TutorActivity.class));
                                      finish();
                                 }
                                 else
                                 {
-                                    startActivity(new Intent(LoginActivity.this,AdministratorActivity.class));
+                                    startActivity(new Intent(LoginActivity.this, AdministratorActivity.class));
                                     finish();
 
                                 }
@@ -159,13 +162,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         if(item.getItemId()==R.id.course)
         {
-            Intent intent=new Intent(this,CoursesActivity.class);
+            Intent intent=new Intent(this, CoursesActivity.class);
             startActivity(intent);
 
         }
         if(item.getItemId()==R.id.location)
         {
-             startActivity(new Intent(LoginActivity.this,MapActivity.class));
+             startActivity(new Intent(LoginActivity.this, MapActivity.class));
         }
         if(item.getItemId()==R.id.contact)
         {

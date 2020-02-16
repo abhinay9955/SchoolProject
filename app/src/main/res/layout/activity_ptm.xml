@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.PtmActivity"
+    tools:context=".Activities.Parent.PtmActivity"
     android:background="@drawable/gradientback"
     android:orientation="vertical">
 

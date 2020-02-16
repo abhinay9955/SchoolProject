@@ -1,4 +1,4 @@
-package com.example.schoolproject.Activities;
+package com.example.schoolproject.Activities.General;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.schoolproject.Activities.Parent.ParentActivity;
+import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.example.schoolproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -97,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     data.put("email",email);
 
                                     rootref.child("Parent").child(userid).updateChildren(data);
-                                    startActivity(new Intent(RegisterActivity.this,ParentActivity.class));
+                                    startActivity(new Intent(RegisterActivity.this, ParentActivity.class));
                                     finish();
                                 }
                                 else if(user.equals("Tutor"))
@@ -108,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                     rootref.child("Tutor").child(userid).updateChildren(data);
 
-                                    startActivity(new Intent(RegisterActivity.this,TutorActivity.class));
+                                    startActivity(new Intent(RegisterActivity.this, TutorActivity.class));
                                     finish();
                                 }
 

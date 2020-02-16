@@ -1,4 +1,4 @@
-package com.example.schoolproject.Activities;
+package com.example.schoolproject.Activities.Administrator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,8 +14,6 @@ import android.widget.Toast;
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
 
 public class AddChildActivity extends AppCompatActivity {
     private EditText childname,childparent,childcontact,childroll;
@@ -41,8 +39,8 @@ public class AddChildActivity extends AppCompatActivity {
                 {
 
 
-                    String name,parent,roll,id,contact;
-                    int std,grade,rank,tdp,twd;
+                    String name,parent,roll,id,contact,std;
+                    int grade,rank,tdp,twd;
 
                     name=childname.getText().toString();
                     parent=childparent.getText().toString();
@@ -52,7 +50,7 @@ public class AddChildActivity extends AppCompatActivity {
                     grade=-1;
                     tdp=-1;
                     twd=-1;
-                    std=(childclass.getSelectedItemPosition()+1);
+                    std=classes[childclass.getSelectedItemPosition()];
                     id= FirebaseDatabase.getInstance().getReference("students").child("Class "+std).push().getKey();
 
                     StudentModel sm=new StudentModel(name,id,roll,contact,grade,rank,tdp,twd,std,parent);
