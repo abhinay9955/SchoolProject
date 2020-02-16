@@ -51,10 +51,10 @@ public class AddChildActivity extends AppCompatActivity {
                     tdp=-1;
                     twd=-1;
                     std=classes[childclass.getSelectedItemPosition()];
-                    id= FirebaseDatabase.getInstance().getReference("students").child("Class "+std).push().getKey();
+                    id= FirebaseDatabase.getInstance().getReference("students").child(std).push().getKey();
 
                     StudentModel sm=new StudentModel(name,id,roll,contact,grade,rank,tdp,twd,std,parent);
-                    FirebaseDatabase.getInstance().getReference("students").child("Class "+std).child(id).setValue(sm);
+                    FirebaseDatabase.getInstance().getReference("students").child(std).child(id).setValue(sm);
                     finish();
 
 
