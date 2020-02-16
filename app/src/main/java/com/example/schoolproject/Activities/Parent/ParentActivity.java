@@ -4,21 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
+import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.example.schoolproject.Utils.ChildAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -28,10 +29,14 @@ public class ParentActivity extends AppCompatActivity {
     HashMap<String,ArrayList<StudentModel>>  spinnerdata;
     ArrayList<String> classes;
     ProgressDialog progressDialog;
+
+    private FirebaseAuth mAuth;
+
     ArrayList<StudentModel> children;
     RecyclerView mRecycler;
     ChildAdapter adapter;
     Button newchild,book,ptmlist;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,8 @@ public class ParentActivity extends AppCompatActivity {
         data=new HashMap<>();
         children=new ArrayList<>();
         classes=new ArrayList<>();
+        mAuth=FirebaseAuth.getInstance();
+
         initiialise();
         mRecycler.setLayoutManager(new LinearLayoutManager(ParentActivity.this));;
         adapter=new ChildAdapter(children);
@@ -137,4 +144,28 @@ public class ParentActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.tutormenu,menu);
+        return true;
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        if(item.getItemId()==R.id.signouttutor)
+        {
+            mAuth.signOut();
+            Intent intent=new Intent(ParentActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
+
+
+        return true;
+    }
 }
+

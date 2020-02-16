@@ -19,6 +19,7 @@ public class AdministratorActivity extends AppCompatActivity {
 
 
     Button addchild,pta,tutor,parent;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class AdministratorActivity extends AppCompatActivity {
         tutor=findViewById(R.id.tutor);
         parent=findViewById(R.id.parent);
         pta=findViewById(R.id.pta);
+        mAuth=FirebaseAuth.getInstance();
 
         addchild.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +47,8 @@ public class AdministratorActivity extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -57,8 +61,11 @@ public class AdministratorActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         if(item.getItemId()==R.id.signouttutor)
         {
-            FirebaseAuth.getInstance().signOut();
-            Intent intent=new Intent(AdministratorActivity.this, LoginActivity.class);
+
+            mAuth.signOut();
+            Intent intent=new Intent(AdministratorActivity.this,LoginActivity.class);
+
+
             startActivity(intent);
             finish();
 
