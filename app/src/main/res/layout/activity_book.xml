@@ -5,15 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activities.Parent.NewChildActivity">
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="70dp" />
+    tools:context=".Activities.Parent.BookActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_new_child"
+        android:id="@+id/recycler_book"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

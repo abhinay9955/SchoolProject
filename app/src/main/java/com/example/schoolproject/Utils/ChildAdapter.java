@@ -1,6 +1,7 @@
 package com.example.schoolproject.Utils;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,8 +39,9 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
-        StudentModel modeltemp=mylist.get(position);
-        holder.vhchildname.setText(modeltemp.getName());
+          StudentModel modeltemp=mylist.get(position);
+
+        holder.vhchildname.setText(mylist.get(position).getName());
         holder.vhchildparenntname.setText(modeltemp.getParent());
         holder.vhchildrank.setText((modeltemp.getRank()==-1?"N/A":modeltemp.getRank()+""));
         holder.vhchildtwd.setText((modeltemp.getTwd()==-1?"N/A":modeltemp.getTwd()+""));
@@ -56,6 +58,8 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder>
 
     @Override
     public int getItemCount() {
+
+        Log.i("getItemCountChild: ",mylist.toString());
         return mylist.size();
     }
 

@@ -2,8 +2,11 @@ package com.example.schoolproject.Activities.Parent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,7 +25,7 @@ import java.util.HashMap;
 
 public class NewChildActivity extends AppCompatActivity {
 
-
+    RecyclerView recyclerView;
     HashMap<String,ArrayList<StudentModel>>  spinnerdata;
     Spinner spinner;
     ArrayList<StudentModel> child;
@@ -34,12 +37,20 @@ public class NewChildActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_child);
+        child=new ArrayList<>();
+        recyclerView=findViewById(R.id.recycler_new_child);
         spinner=findViewById(R.id.spinner);
+        parentAddChildAdapter=new ParentAddChildAdapter(child);
+        recyclerView.setLayoutManager(new LinearLayoutManager(NewChildActivity.this));
+        recyclerView.setAdapter(parentAddChildAdapter);
         spinner.setAdapter(new ArrayAdapter<String>(NewChildActivity.this,android.R.layout.simple_spinner_dropdown_item,classes));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 child=spinnerdata.get(classes[i]);
+                parentAddChildAdapter=new ParentAddChildAdapter(child);
+                recyclerView.setAdapter(parentAddChildAdapter);
+                Log.i("onItemSelected: ",child.size()+"");
             }
 
             @Override
@@ -48,7 +59,6 @@ public class NewChildActivity extends AppCompatActivity {
             }
         });
         spinnerdata=new HashMap<>();
-        parentAddChildAdapter=new ParentAddChildAdapter(child);
         FirebaseDatabase.getInstance().getReference("students").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

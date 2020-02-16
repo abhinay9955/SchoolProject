@@ -28,7 +28,6 @@ public class AdministratorActivity extends AppCompatActivity {
 
         addchild=findViewById(R.id.addchild);
         tutor=findViewById(R.id.tutor);
-        parent=findViewById(R.id.parent);
         pta=findViewById(R.id.pta);
         mAuth=FirebaseAuth.getInstance();
 
@@ -43,6 +42,13 @@ public class AdministratorActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdministratorActivity.this, AdminstratorPTAActivity.class));
+            }
+        });
+
+        tutor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

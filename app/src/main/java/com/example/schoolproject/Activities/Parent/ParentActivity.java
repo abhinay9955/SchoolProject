@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,9 +52,9 @@ public class ParentActivity extends AppCompatActivity {
         children=new ArrayList<>();
         classes=new ArrayList<>();
         mAuth=FirebaseAuth.getInstance();
-
         initiialise();
-        mRecycler.setLayoutManager(new LinearLayoutManager(ParentActivity.this));;
+        mRecycler.setLayoutManager(new LinearLayoutManager(ParentActivity.this));
+        Log.i( "onCreate: ",children.size()+"");
         adapter=new ChildAdapter(children);
         mRecycler.setAdapter(adapter);
         newchild.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +74,7 @@ public class ParentActivity extends AppCompatActivity {
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ParentActivity.this,BookActivity.class));
             }
         });
 
@@ -94,10 +95,12 @@ public class ParentActivity extends AppCompatActivity {
                     for(DataSnapshot dss:ds.getChildren())
                     {
                         list.add(dss.getValue(StudentModel.class));
+                        map.put(dss.getKey(),dss.getValue(StudentModel.class));
                     }
                     spinnerdata.put(ds.getKey(),list);
                     data.put(ds.getKey(),map);
                 }
+                Log.i("onDataChangedata: ",data.toString());
                 progressDialog.dismiss();
 
                 fillParent();
@@ -126,15 +129,20 @@ public class ParentActivity extends AppCompatActivity {
     public void fillParent()
     {
 
-        FirebaseDatabase.getInstance().getReference("parent").child("children").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("Parent").child(FirebaseAuth.getInstance().getUid()).child("children").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 children.clear();
                 for(DataSnapshot ds:dataSnapshot.getChildren())
                 {
-                   StudentModel pm=data.get(ds.child("std").getValue(String.class)).get(ds.child("id").getValue(String.class));
+
+
+
+                    StudentModel pm=data.get(ds.child("std").getValue(String.class)).get(ds.child("id").getValue(String.class));
                    children.add(pm);
                 }
+
+                adapter.notifyDataSetChanged();
 
             }
 
