@@ -40,6 +40,8 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_child_info);
         progressDialog=new ProgressDialog(this);
+        getSupportActionBar().setTitle("SCHOOL APP");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
         progressDialog.show();

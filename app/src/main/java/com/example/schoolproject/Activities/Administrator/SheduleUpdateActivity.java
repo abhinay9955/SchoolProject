@@ -29,6 +29,8 @@ public class SheduleUpdateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shedule_update);
+        getSupportActionBar().setTitle("Shedules");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         tutors=new ArrayList<>();
         progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("Loading...");

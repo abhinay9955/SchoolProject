@@ -26,6 +26,8 @@ public class TutorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor);
+        getSupportActionBar().setTitle("TUTOR");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         mAuth=FirebaseAuth.getInstance();
     }
 

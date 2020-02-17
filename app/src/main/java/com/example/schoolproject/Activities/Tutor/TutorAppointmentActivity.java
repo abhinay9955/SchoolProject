@@ -31,7 +31,8 @@ public class TutorAppointmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor_appointment);
-        getSupportActionBar().setTitle("APPOINTMENTS");
+        getSupportActionBar().setTitle("SCHOOL APP");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         parents=new HashMap<>();
         appointments=new ArrayList<>();
         recyclerView=findViewById(R.id.recylerview_tutorapppointment);

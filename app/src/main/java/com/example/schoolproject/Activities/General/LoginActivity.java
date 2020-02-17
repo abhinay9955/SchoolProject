@@ -46,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Initialise();
+        getSupportActionBar().setTitle("LOG IN");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         progressDialog=new ProgressDialog(this);
         progressDialog.setTitle("Logging you in");
         progressDialog.setMessage("Please wait...");

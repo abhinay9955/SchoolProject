@@ -30,6 +30,8 @@ public class CoursesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses);
         progressDialog=new ProgressDialog(this);
+        getSupportActionBar().setTitle("SCHOOL APP");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         progressDialog.setTitle("Loading");
         progressDialog.setMessage("Please Wait...");
         progressDialog.show();
