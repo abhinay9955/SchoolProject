@@ -21,4 +21,7 @@ public class SheduleModel
         this.period = period;
         this.classG = classG;
     }
+
+    public SheduleModel() {
+    }
 }
