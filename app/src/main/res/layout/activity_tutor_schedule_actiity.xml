@@ -4,16 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Tutor.UpdateChildInfoActivity"
-    android:orientation="vertical">
-    <Spinner
-        android:id="@+id/ucispinner"
-        android:layout_width="match_parent"
-        android:layout_height="70dp" />
+    android:orientation="vertical"
+    tools:context=".Activities.Tutor.TutorScheduleActiity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ucirecycler_new_child"
+        android:id="@+id/tutor_schedule_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>

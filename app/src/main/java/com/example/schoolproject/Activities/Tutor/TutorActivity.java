@@ -49,6 +49,9 @@ public class TutorActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.tutor_shedule)
         {
             Toast.makeText(TutorActivity.this, "this will open shedule list", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(TutorActivity.this, TutorScheduleActiity.class);
+            startActivity(intent);
+
         }
 
 
