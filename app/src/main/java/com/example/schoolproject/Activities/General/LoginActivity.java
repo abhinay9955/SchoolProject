@@ -72,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         forgotpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                opendialogue(view);
 
             }
         });
@@ -195,5 +196,44 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    public void opendialogue(View view)
+
+    {
+
+        Toast.makeText(LoginActivity.this, "Clicked ", Toast.LENGTH_SHORT).show();
+        Dialog d=new Dialog(LoginActivity.this);
+        d.setContentView(R.layout.forgot_password_dialogue);
+
+        final EditText email;
+        Button send;
+        email=d.findViewById(R.id.email);
+        send=d.findViewById(R.id.sendlink);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View view) {
+
+                if(!TextUtils.isEmpty(email.getText().toString()))
+                {FirebaseAuth.getInstance().sendPasswordResetEmail(email.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful())
+                        {
+                            Toast.makeText(LoginActivity.this, "Link send", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(LoginActivity.this, "Enter valid email", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });}
+                else
+                    Toast.makeText(LoginActivity.this, "Enter email", Toast.LENGTH_SHORT).show();
+            }
+        });
+        d.show();
+
+
     }
 }

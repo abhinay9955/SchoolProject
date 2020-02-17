@@ -53,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forget password..."
+        android:onClick="opendialogue"
         android:layout_below="@+id/loginpassworduser"
         android:layout_alignParentRight="true"
         android:layout_marginTop="5dp"
