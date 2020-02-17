@@ -51,7 +51,7 @@ public class UpdateChildInfoAdapter extends RecyclerView.Adapter <UpdateChildInf
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog(position,holder);
+//                showDialog(position,holder);
             }
         });
         holder.parent.setText(children.get(position).getParent());
@@ -63,33 +63,33 @@ public class UpdateChildInfoAdapter extends RecyclerView.Adapter <UpdateChildInf
     }
 
 
-    public void showDialog(final int position, MyViewHolder holder)
-    {
-        AlertDialog.Builder alertDialog=new AlertDialog.Builder(context).setMessage("Are you Sure About adding ")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        HashMap<String,Object> data=new HashMap<>();
-                        data.put("std",children.get(position).getStd());
-                        data.put("id",children.get(position).getId());
-                        FirebaseDatabase.getInstance().getReference("Parent").child(FirebaseAuth.getInstance().getUid()).child("children").push().updateChildren(data);
-                        Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
-                        dialogInterface.dismiss();
-
-                    }
-                }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-        alertDialog.create().show();
-    }
+//    public void showDialog(final int position, MyViewHolder holder)
+//    {
+//        AlertDialog.Builder alertDialog=new AlertDialog.Builder(context).setMessage("Are you Sure About adding ")
+//                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        HashMap<String,Object> data=new HashMap<>();
+//                        data.put("std",children.get(position).getStd());
+//                        data.put("id",children.get(position).getId());
+//                        FirebaseDatabase.getInstance().getReference("Parent").child(FirebaseAuth.getInstance().getUid()).child("children").push().updateChildren(data);
+//                        Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
+//                        dialogInterface.dismiss();
+//
+//                    }
+//                }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        dialogInterface.dismiss();
+//                    }
+//                });
+//        alertDialog.create().show();
+//    }
 
     @Override
     public int getItemCount() {
 
-        //Log.i("getItemCount: ",children.size()+"");
+        Log.i("getItemCountuci: ",children+"");
         return children.size();
     }
 
