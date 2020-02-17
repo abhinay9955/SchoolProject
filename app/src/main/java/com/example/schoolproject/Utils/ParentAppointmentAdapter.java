@@ -52,15 +52,15 @@ public class ParentAppointmentAdapter extends RecyclerView.Adapter<ParentAppoint
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog(i);
+                showDialog(tutors.get(i).getId(),tutors.get(i).getName());
             }
         });
 
     }
 
-    public void showDialog(final int i)
+    public void showDialog(final String id,String name)
     {
-        AlertDialog.Builder alertDialog=new AlertDialog.Builder(context).setMessage("Book an Appointment with \n"+tutors.get(i).getName()+"\non next PTM")
+        AlertDialog.Builder alertDialog=new AlertDialog.Builder(context).setMessage("Book an Appointment with \n"+name+"\non next PTM")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, final int i) {
@@ -71,7 +71,7 @@ public class ParentAppointmentAdapter extends RecyclerView.Adapter<ParentAppoint
                                 HashMap<String,Object> map=new HashMap<>();
                                 map.put("pid",FirebaseAuth.getInstance().getUid());
                                 map.put("date",dataSnapshot.getValue(String.class));
-                                FirebaseDatabase.getInstance().getReference("Tutor").child(tutors.get(i).getId()).child("Appointments").push().updateChildren(map);
+                                FirebaseDatabase.getInstance().getReference("Tutor").child(id).child("Appointments").push().updateChildren(map);
                                 Toast.makeText(context, "Booked", Toast.LENGTH_SHORT).show();
                                  }
 
