@@ -14,6 +14,7 @@ import android.widget.Spinner;
 
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
+import com.example.schoolproject.Utils.AppConstants;
 import com.example.schoolproject.Utils.ParentAddChildAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +31,7 @@ public class NewChildActivity extends AppCompatActivity {
     Spinner spinner;
     ArrayList<StudentModel> child;
     ParentAddChildAdapter parentAddChildAdapter;
-    String[] classes={"Class 1","Class 2","Class 3","Class 4"};
+
 
 
     @Override
@@ -47,11 +48,11 @@ public class NewChildActivity extends AppCompatActivity {
         parentAddChildAdapter=new ParentAddChildAdapter(child);
         recyclerView.setLayoutManager(new LinearLayoutManager(NewChildActivity.this));
         recyclerView.setAdapter(parentAddChildAdapter);
-        spinner.setAdapter(new ArrayAdapter<String>(NewChildActivity.this,android.R.layout.simple_spinner_dropdown_item,classes));
+        spinner.setAdapter(new ArrayAdapter<String>(NewChildActivity.this,android.R.layout.simple_spinner_dropdown_item,AppConstants.classes));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                child=spinnerdata.get(classes[i]);
+                child=spinnerdata.get(AppConstants.classes[i]);
                 parentAddChildAdapter=new ParentAddChildAdapter(child);
                 recyclerView.setAdapter(parentAddChildAdapter);
 //                Log.i("onItemSelected: ",child.size()+"");
@@ -59,7 +60,7 @@ public class NewChildActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                    child=spinnerdata.get(classes[0]);
+                    child=spinnerdata.get(AppConstants.classes[0]);
             }
         });
 
@@ -93,9 +94,9 @@ public class NewChildActivity extends AppCompatActivity {
 
     public void init()
     {
-        spinnerdata.put(classes[0],new ArrayList<StudentModel>());
-        spinnerdata.put(classes[1],new ArrayList<StudentModel>());
-        spinnerdata.put(classes[2],new ArrayList<StudentModel>());
-        spinnerdata.put(classes[3],new ArrayList<StudentModel>());
+        for(int i=0;i<AppConstants.classes.length;i++)
+        {
+            spinnerdata.put(AppConstants.classes[i],new ArrayList<StudentModel>());
+        }
     }
 }

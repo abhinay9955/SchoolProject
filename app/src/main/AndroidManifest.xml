@@ -11,7 +11,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.Tutor.TutorScheduleActiity"></activity>
         <activity android:name=".Activities.Administrator.SheduleUpdateActivity" />
-        <activity android:name=".Activities.Administrator.TutorInfo" />
         <activity android:name=".Activities.Parent.BookActivity" />
         <activity android:name=".Activities.Tutor.UpdateChildInfoActivity" />
         <activity android:name=".Activities.Tutor.TutorAppointmentActivity" />

@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import com.example.schoolproject.Activities.Parent.NewChildActivity;
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
+import com.example.schoolproject.Utils.AppConstants;
 import com.example.schoolproject.Utils.ParentAddChildAdapter;
 import com.example.schoolproject.Utils.UpdateChildInfoAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -32,7 +33,6 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
     private Spinner spinner;
     private ArrayList<StudentModel> child;
     private UpdateChildInfoAdapter updateChildAdapter;
-    private String[] classes={"Class 1","Class 2","Class 3","Class 4"};
     ProgressDialog progressDialog;
 
     @Override
@@ -52,11 +52,11 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
         updateChildAdapter=new UpdateChildInfoAdapter(child);
         recyclerView.setLayoutManager(new LinearLayoutManager(UpdateChildInfoActivity.this));
         recyclerView.setAdapter(updateChildAdapter);
-        spinner.setAdapter(new ArrayAdapter<String>(UpdateChildInfoActivity.this,android.R.layout.simple_spinner_dropdown_item,classes));
+        spinner.setAdapter(new ArrayAdapter<String>(UpdateChildInfoActivity.this,android.R.layout.simple_spinner_dropdown_item, AppConstants.classes));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                         child=spinnerdata.get(classes[i]);
+                         child=spinnerdata.get(AppConstants.classes[i]);
                          updateChildAdapter=new UpdateChildInfoAdapter(child);
                 recyclerView.setAdapter(updateChildAdapter);
 
@@ -65,7 +65,7 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                child=spinnerdata.get(classes[0]);
+                child=spinnerdata.get(AppConstants.classes[0]);
                 updateChildAdapter=new UpdateChildInfoAdapter(child);
                 recyclerView.setAdapter(updateChildAdapter);
 
@@ -107,9 +107,8 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
 
     public void init()
     {
-        spinnerdata.put(classes[0],new ArrayList<StudentModel>());
-        spinnerdata.put(classes[1],new ArrayList<StudentModel>());
-        spinnerdata.put(classes[2],new ArrayList<StudentModel>());
-        spinnerdata.put(classes[3],new ArrayList<StudentModel>());
+        for(int i=0;i<AppConstants.classes.length;i++)
+        spinnerdata.put(AppConstants.classes[i],new ArrayList<StudentModel>());
+
     }
 }

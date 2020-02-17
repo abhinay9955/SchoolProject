@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.schoolproject.Activities.Administrator.AdministratorActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
@@ -46,10 +47,15 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, TutorActivity.class));
                         finish();
                     }
-                    else
+                    else  if(dataSnapshot.getValue(String.class).equals("Administrator"))
                     {
                         startActivity(new Intent(MainActivity.this, AdministratorActivity.class));
                         finish();
+                    }
+                    else
+                    {
+                        Toast.makeText(MainActivity.this, "Invalid Credential", Toast.LENGTH_SHORT).show();
+                        FirebaseAuth.getInstance().signOut();
                     }
                 }
 

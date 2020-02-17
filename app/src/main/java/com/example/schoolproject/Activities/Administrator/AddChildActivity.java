@@ -13,13 +13,13 @@ import android.widget.Toast;
 
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
+import com.example.schoolproject.Utils.AppConstants;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AddChildActivity extends AppCompatActivity {
     private EditText childname,childparent,childcontact,childroll;
     private Button registerchildbutton;
     Spinner childclass;
-    private String[] classes={"Class 1","Class 2","Class 3","Class 4"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class AddChildActivity extends AppCompatActivity {
 
 
         Initialise();
-         childclass.setAdapter(new ArrayAdapter<String>(AddChildActivity.this,android.R.layout.simple_spinner_dropdown_item,classes));
+         childclass.setAdapter(new ArrayAdapter<String>(AddChildActivity.this,android.R.layout.simple_spinner_dropdown_item,AppConstants.classes));
         getSupportActionBar().hide();
 
         registerchildbutton.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +50,7 @@ public class AddChildActivity extends AppCompatActivity {
                     grade=-1;
                     tdp=-1;
                     twd=-1;
-                    std=classes[childclass.getSelectedItemPosition()];
+                    std= AppConstants.classes[childclass.getSelectedItemPosition()];
                     id= FirebaseDatabase.getInstance().getReference("students").child(std).push().getKey();
 
                     StudentModel sm=new StudentModel(name,id,roll,contact,grade,rank,tdp,twd,std,parent);

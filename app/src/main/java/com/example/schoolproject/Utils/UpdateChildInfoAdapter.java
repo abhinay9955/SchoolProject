@@ -9,6 +9,7 @@ package com.example.schoolproject.Utils;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.LinearLayout;
         import android.widget.TextView;
         import android.widget.Toast;
 
@@ -58,33 +59,38 @@ public class UpdateChildInfoAdapter extends RecyclerView.Adapter <UpdateChildInf
         holder.name.setText(children.get(position).getName());
         holder.roll.setText(children.get(position).getRoll());
         holder.std.setText(children.get(position).getStd());
-
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                showDialog();
+            }
+        });
 
     }
 
 
-//    public void showDialog(final int position, MyViewHolder holder)
-//    {
-//        AlertDialog.Builder alertDialog=new AlertDialog.Builder(context).setMessage("Are you Sure About adding ")
-//                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        HashMap<String,Object> data=new HashMap<>();
-//                        data.put("std",children.get(position).getStd());
-//                        data.put("id",children.get(position).getId());
-//                        FirebaseDatabase.getInstance().getReference("Parent").child(FirebaseAuth.getInstance().getUid()).child("children").push().updateChildren(data);
-//                        Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
-//                        dialogInterface.dismiss();
-//
-//                    }
-//                }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        dialogInterface.dismiss();
-//                    }
-//                });
-//        alertDialog.create().show();
-//    }
+    public void showDialog(final int position, MyViewHolder holder)
+    {
+        AlertDialog.Builder alertDialog=new AlertDialog.Builder(context).setMessage("Are you Sure About adding ")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        HashMap<String,Object> data=new HashMap<>();
+                        data.put("std",children.get(position).getStd());
+                        data.put("id",children.get(position).getId());
+                        FirebaseDatabase.getInstance().getReference("Parent").child(FirebaseAuth.getInstance().getUid()).child("children").push().updateChildren(data);
+                        Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
+                        dialogInterface.dismiss();
+
+                    }
+                }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+        alertDialog.create().show();
+    }
 
     @Override
     public int getItemCount() {
@@ -97,7 +103,7 @@ public class UpdateChildInfoAdapter extends RecyclerView.Adapter <UpdateChildInf
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView name,roll,std,parent;
-        CardView card;
+        LinearLayout card;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
