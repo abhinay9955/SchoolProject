@@ -48,7 +48,7 @@ public class AdministratorActivity extends AppCompatActivity {
         tutor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                 startActivity(new Intent(AdministratorActivity.this,SheduleUpdateActivity.class));
             }
         });
     }
