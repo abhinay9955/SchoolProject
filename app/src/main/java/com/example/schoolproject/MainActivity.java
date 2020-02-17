@@ -1,8 +1,10 @@
 package com.example.schoolproject;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -27,44 +29,68 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         user= FirebaseAuth.getInstance().getCurrentUser();
-        if(user==null)
-        {
-            startActivity(new Intent(this,LoginActivity.class));
-            finish();
-        }
-        else
-        {
-            FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.getValue(String.class).equals("Parent"))
+        FirebaseDatabase.getInstance().getReference("check").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                if(dataSnapshot.getValue(Integer.class)==1)
+                {
+                    if(user==null)
                     {
-                        startActivity(new Intent(MainActivity.this, ParentActivity.class));
-                        finish();
-                    }
-                    else if(dataSnapshot.getValue(String.class).equals("Tutor"))
-                    {
-                        startActivity(new Intent(MainActivity.this, TutorActivity.class));
-                        finish();
-                    }
-                    else  if(dataSnapshot.getValue(String.class).equals("Administrator"))
-                    {
-                        startActivity(new Intent(MainActivity.this, AdministratorActivity.class));
+                        startActivity(new Intent(MainActivity.this,LoginActivity.class));
                         finish();
                     }
                     else
                     {
-                        Toast.makeText(MainActivity.this, "Invalid Credential", Toast.LENGTH_SHORT).show();
-                        FirebaseAuth.getInstance().signOut();
+                        FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.getValue(String.class).equals("Parent"))
+                                {
+                                    startActivity(new Intent(MainActivity.this, ParentActivity.class));
+                                    finish();
+                                }
+                                else if(dataSnapshot.getValue(String.class).equals("Tutor"))
+                                {
+                                    startActivity(new Intent(MainActivity.this, TutorActivity.class));
+                                    finish();
+                                }
+                                else  if(dataSnapshot.getValue(String.class).equals("Administrator"))
+                                {
+                                    startActivity(new Intent(MainActivity.this, AdministratorActivity.class));
+                                    finish();
+                                }
+                                else
+                                {
+                                    Toast.makeText(MainActivity.this, "Invalid Credential", Toast.LENGTH_SHORT).show();
+                                    FirebaseAuth.getInstance().signOut();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
                     }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
-            });
-        }
+                else
+                {
+                    Dialog dialog=new Dialog(MainActivity.this);
+                    dialog.setContentView(R.layout.item_first);
+                    dialog.setCancelable(false);
+                    dialog.show();
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
