@@ -41,19 +41,20 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         >
+
         <TextView
-            android:textColor="#ffffff"
-            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:padding="10dp"
+            android:text="GUARDIAN NAME :"
+            android:textColor="#ffffff"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:text="Guardian name:"></TextView>
+            android:textStyle="bold"></TextView>
         <TextView
             android:textColor="#ffffff"
             android:textAllCaps="true"
-            android:id="@+id/child_item_guardian"
+            android:id="@+id/child_item_parent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="ABHINAY BARNWAL"
@@ -66,19 +67,20 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         >
+
         <TextView
-            android:padding="10dp"
-            android:textColor="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:padding="10dp"
+            android:text="CLASS :"
+            android:textColor="#ffffff"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:text="Roll Number:"></TextView>
+            android:textStyle="bold"></TextView>
         <TextView
             android:textAllCaps="true"
             android:textColor="#ffffff"
-            android:id="@+id/child_item_rollno"
+            android:id="@+id/child_item_class"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="20181001"
@@ -91,19 +93,20 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         >
+
         <TextView
-            android:textColor="#ffffff"
-            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:padding="10dp"
+            android:text="ROLL NO:"
+            android:textColor="#ffffff"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:text="Contact no.:"></TextView>
+            android:textStyle="bold"></TextView>
         <TextView
             android:textColor="#ffffff"
             android:textAllCaps="true"
-            android:id="@+id/child_item_contact"
+            android:id="@+id/child_item_roll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="ABHINAY BARNWAL"
@@ -116,19 +119,20 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         >
+
         <TextView
-            android:textColor="#ffffff"
-            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:padding="10dp"
+            android:text="CONTACT :"
+            android:textColor="#ffffff"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:text="CLASS :"></TextView>
+            android:textStyle="bold"></TextView>
         <TextView
             android:textAllCaps="true"
             android:textColor="#ffffff"
-            android:id="@+id/child_item_class"
+            android:id="@+id/child_item_contact"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="09"
@@ -151,15 +155,17 @@
             android:textSize="16dp"
             android:textStyle="bold"
             android:text="GRADE      :"></TextView>
+
         <EditText
-            android:textAllCaps="true"
             android:id="@+id/child_item_grade"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:textColor="#ffffff"
-            android:gravity="center_vertical"
             android:layout_weight="1"
+
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
             android:textSize="18dp"></EditText>
     </LinearLayout>
     <LinearLayout
@@ -176,15 +182,17 @@
             android:textSize="16dp"
             android:textStyle="bold"
             android:text="RANK        :"></TextView>
+
         <EditText
-            android:textAllCaps="true"
-            android:textColor="#ffffff"
             android:id="@+id/child_item_rank"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:gravity="center_vertical"
             android:layout_weight="1"
+            android:gravity="center_vertical"
+
+            android:inputType="number"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
             android:textSize="18dp"></EditText>
     </LinearLayout>
     <LinearLayout
@@ -201,15 +209,17 @@
             android:textSize="12dp"
             android:textStyle="bold"
             android:text="Total days Present :"></TextView>
+
         <EditText
-            android:textColor="#ffffff"
-            android:textAllCaps="true"
             android:id="@+id/child_item_tdp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:gravity="center_vertical"
             android:layout_weight="1"
+            android:gravity="center_vertical"
+
+            android:inputType="number"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
             android:textSize="18dp"></EditText>
     </LinearLayout>
     <LinearLayout
@@ -226,15 +236,17 @@
             android:textSize="12dp"
             android:textStyle="bold"
             android:text="Toatal working days:"></TextView>
+
         <EditText
-            android:textColor="#ffffff"
-            android:textAllCaps="true"
             android:id="@+id/child_item_twd"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:gravity="center_vertical"
             android:layout_weight="1"
+            android:gravity="center_vertical"
+
+            android:inputType="number"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
             android:textSize="18dp"></EditText>
     </LinearLayout>
     <Button

@@ -7,8 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.schoolproject.Model.SheduleModel;
 import com.example.schoolproject.R;
@@ -20,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SheduleAdeerActivity extends AppCompatActivity {
 
@@ -30,6 +35,7 @@ public class SheduleAdeerActivity extends AppCompatActivity {
     TextView name_tv,tutorid_tv;
     EditText std,period,subject;
     ProgressDialog progressDialog;
+    Button addschedule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +54,31 @@ public class SheduleAdeerActivity extends AppCompatActivity {
         scheduleAdapter=new TutorSheduleAdapter(schedules,this);
         recycler.setLayoutManager(new LinearLayoutManager(this));
         recycler.setAdapter(scheduleAdapter);
+        addschedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(std.getText().toString()) || TextUtils.isEmpty(period.getText().toString()) || TextUtils.isEmpty(subject.getText().toString()))
+                {
+                    Toast.makeText(SheduleAdeerActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    HashMap<String ,Object> data=new HashMap<>();
+                    data.put("class",std.getText().toString());
+                    data.put("period",period.getText().toString());
+                    data.put("subject",subject.getText().toString());
+                    FirebaseDatabase.getInstance().getReference("Tutor").child(id).child("schedule").push().updateChildren(data);
+                    Toast.makeText(SheduleAdeerActivity.this, "Updated", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         FirebaseDatabase.getInstance().getReference("Tutor").child(id).child("schedule").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 schedules.clear();
                 for(DataSnapshot ds:dataSnapshot.getChildren())
                 {
-                    SheduleModel sm=ds.getValue(SheduleModel.class);
+                    SheduleModel sm=new SheduleModel(ds.child("subject").getValue(String.class),ds.child("period").getValue(String.class),ds.child("class").getValue(String.class));
                     schedules.add(sm);
                 }
                 scheduleAdapter.notifyDataSetChanged();
@@ -77,5 +101,6 @@ public class SheduleAdeerActivity extends AppCompatActivity {
         recycler=findViewById(R.id.recyclerview);
         name_tv=findViewById(R.id.su_name);
         tutorid_tv=findViewById(R.id.su_tid);
+        addschedule=findViewById(R.id.su_add_button);
     }
 }

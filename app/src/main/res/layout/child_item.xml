@@ -54,7 +54,7 @@
             <TextView
                 android:textAllCaps="true"
                 android:textColor="#ffffff"
-                android:id="@+id/child_item_rollno"
+                android:id="@+id/child_item_class"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="20181001"
@@ -205,7 +205,7 @@
             <TextView
                 android:textColor="#ffffff"
                 android:textAllCaps="true"
-                android:id="@+id/child_item_guardian"
+                android:id="@+id/child_item_parent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="ABHINAY BARNWAL"
@@ -230,7 +230,7 @@
             <TextView
                 android:textColor="#ffffff"
                 android:textAllCaps="true"
-                android:id="@+id/child_item_contact"
+                android:id="@+id/child_item_roll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="ABHINAY BARNWAL"

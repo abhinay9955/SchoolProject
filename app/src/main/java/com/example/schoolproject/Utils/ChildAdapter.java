@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.schoolproject.Model.StudentModel;
-import com.example.schoolproject.MyAdapterPT;
 import com.example.schoolproject.R;
 
 import java.util.ArrayList;
@@ -72,11 +71,11 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder>
             super(itemView);
             vhchildname =(TextView) itemView.findViewById(R.id.child_item_name);
             vhchildclass =(TextView) itemView.findViewById(R.id.child_item_class);
-            vhchildcontact =(TextView) itemView.findViewById(R.id.child_item_contact);
+            vhchildcontact =(TextView) itemView.findViewById(R.id.child_item_roll);
             vhchildgrade =(TextView) itemView.findViewById(R.id.child_item_grade);
             //vhchildID =(TextView) itemView.findViewById(R.id.);
-            vhchildparenntname =(TextView) itemView.findViewById(R.id.child_item_guardian);
-            vhchildroll =(TextView) itemView.findViewById(R.id.child_item_rollno);
+            vhchildparenntname =(TextView) itemView.findViewById(R.id.child_item_parent);
+            vhchildroll =(TextView) itemView.findViewById(R.id.child_item_class);
             vhchildtpd =(TextView) itemView.findViewById(R.id.child_item_tdp);
             vhchildtwd =(TextView) itemView.findViewById(R.id.child_item_twd);
             vhchildrank =(TextView) itemView.findViewById(R.id.child_item_rank);

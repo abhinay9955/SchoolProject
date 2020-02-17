@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,7 +58,7 @@ public class ParentAddChildAdapter extends RecyclerView.Adapter <ParentAddChildA
         holder.name.setText(children.get(position).getName());
         holder.roll.setText(children.get(position).getRoll());
         holder.std.setText(children.get(position).getStd());
-
+        holder.add.setVisibility(View.GONE);
 
     }
 
@@ -97,6 +98,7 @@ public class ParentAddChildAdapter extends RecyclerView.Adapter <ParentAddChildA
 
         TextView name,roll,std,parent;
         LinearLayout card;
+        Button add;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -106,7 +108,7 @@ public class ParentAddChildAdapter extends RecyclerView.Adapter <ParentAddChildA
             std=itemView.findViewById(R.id.std);
             parent=itemView.findViewById(R.id.parent);
             card=itemView.findViewById(R.id.card);
-
+            add=itemView.findViewById(R.id.fill_data_child);
         }
     }
 }

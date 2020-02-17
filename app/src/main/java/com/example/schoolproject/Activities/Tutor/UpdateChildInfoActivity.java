@@ -85,6 +85,7 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
                     ArrayList<StudentModel> list=new ArrayList<>();
                     for(DataSnapshot dss:ds.getChildren())
                     {
+//                        StudentModel sm=new StudentModel(dss.child("name").getValue(String.class),dss.getKey(),dss.child("roll").getValue(String.class),dss.child("contact").getValue(String.class),dss.child("grade").getValue(Integer.class),dss.child("rank").getValue(Integer.class),dss.child("tdp").getValue(Integer.class),dss.child("twd").getValue(Integer.class),dss.child("std").getValue(String.class),dss.child("parent").getValue(String.class));
                         list.add(dss.getValue(StudentModel.class));
 
                     }

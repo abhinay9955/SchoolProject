@@ -111,20 +111,20 @@
             android:layout_weight="1"
             android:textSize="18dp"></TextView>
     </LinearLayout>
+
     <Button
         android:id="@+id/fill_data_child"
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:textColor="#ffffff"
-
-        android:textStyle="bold"
-        android:text=" FILL DATA "
-
-        android:gravity="center"
+        android:layout_height="50dp"
         android:background="@drawable/gradientback3"
 
+        android:gravity="center"
         android:padding="2dp"
-        ></Button>
+
+        android:text=" FILL DATA "
+        android:textColor="#ffffff"
+
+        android:textStyle="bold"></Button>
 
 
 </LinearLayout>
