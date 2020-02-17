@@ -28,6 +28,7 @@ public class TutorScheduleActiity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor_schedule_actiity);
+        getSupportActionBar().setTitle("My Shedules");
         schedules=new ArrayList<>();
         recyclerView=findViewById(R.id.tutor_schedule_recycler);
         adapter=new TutorSheduleAdapter(schedules,TutorScheduleActiity.this);

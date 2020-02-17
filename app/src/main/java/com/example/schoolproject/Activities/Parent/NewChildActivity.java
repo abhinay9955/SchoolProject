@@ -39,6 +39,8 @@ public class NewChildActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_child);
         child=new ArrayList<>();
         recyclerView=findViewById(R.id.recycler_new_child);
+        getSupportActionBar().setTitle("Kids :)");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         spinner=findViewById(R.id.spinner);
         parentAddChildAdapter=new ParentAddChildAdapter(child);
         recyclerView.setLayoutManager(new LinearLayoutManager(NewChildActivity.this));

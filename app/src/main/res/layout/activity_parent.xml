@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.Parent.ParentActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gradientback">
 
     <LinearLayout
         android:id="@+id/button_ll"
@@ -15,14 +16,19 @@
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/gradientback3"
             android:id="@+id/addchild"
             android:layout_width="match_parent"
+            android:textColor="#ffffff"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:text="Add child"></Button>
 
         <Button
+            android:background="@drawable/gradientback3"
+            android:textColor="#ffffff"
+
             android:id="@+id/ptm"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -41,11 +47,14 @@
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/gradientback3"
             android:id="@+id/book"
             android:layout_width="match_parent"
+            android:textColor="#ffffff"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+
             android:layout_weight="1"
+            android:layout_marginHorizontal="30dp"
             android:text="Book Appointment" />
     </LinearLayout>
 

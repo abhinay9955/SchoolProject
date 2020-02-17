@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
+import com.example.schoolproject.Activities.General.MapActivity;
+import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,6 +51,8 @@ public class ParentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent);
+        getSupportActionBar().setTitle("Parent");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         progressDialog=new ProgressDialog(ParentActivity.this);
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
@@ -163,7 +173,38 @@ public class ParentActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
-        if(item.getItemId()==R.id.signouttutor)
+        if(item.getItemId()==R.id.newcourse)
+        {
+            Intent intent=new Intent(this, CoursesActivity.class);
+            startActivity(intent);
+
+        }
+        if(item.getItemId()==R.id.newlocation)
+        {
+            startActivity(new Intent(ParentActivity.this, MapActivity.class));
+        }
+        if(item.getItemId()==R.id.newcontact)
+        {
+            final Dialog dialog=new Dialog(ParentActivity.this);
+            dialog.setContentView(R.layout.contact_dialog);
+            TextView ok;
+            ok=dialog.findViewById(R.id.ok);
+            ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+
+
+        }
+        if(item.getItemId()==R.id.newwebsite)
+        {
+            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+
+        }
+        if(item.getItemId()==R.id.newsign_out)
         {
             mAuth.signOut();
             Intent intent=new Intent(ParentActivity.this, LoginActivity.class);
@@ -174,6 +215,7 @@ public class ParentActivity extends AppCompatActivity {
 
 
         return true;
+
     }
 }
 

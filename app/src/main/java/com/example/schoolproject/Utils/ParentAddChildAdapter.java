@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -95,7 +96,7 @@ public class ParentAddChildAdapter extends RecyclerView.Adapter <ParentAddChildA
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView name,roll,std,parent;
-        CardView card;
+        LinearLayout card;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

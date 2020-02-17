@@ -31,6 +31,8 @@ public class PtmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ptm);
         data=new ArrayList<>();
         mRecyclerView=findViewById(R.id.recycler_ptm);
+        getSupportActionBar().setTitle("P-T meets");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
          ptadapter=new MyAdapterPT(data);
          mRecyclerView.setLayoutManager(new LinearLayoutManager(PtmActivity.this));
          mRecyclerView.setAdapter(ptadapter);

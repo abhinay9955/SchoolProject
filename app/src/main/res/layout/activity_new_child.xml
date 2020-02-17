@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activities.Parent.NewChildActivity">
+    tools:context=".Activities.Parent.NewChildActivity"
+    android:background="@drawable/gradientback">
 
     <Spinner
         android:id="@+id/spinner"

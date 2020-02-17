@@ -6,39 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".Activities.Tutor.TutorActivity"
     android:background="@drawable/gradientback"
+    android:padding="20dp"
     >
     <Button
         android:id="@+id/update_child_info"
-        android:text="CHILD DATA"
-        android:textSize="30dp"
+        android:text="Update Child"
+        android:textSize="22dp"
+        android:textColor="#ffffff"
         android:background="#3B5998 "
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:onClick="ChildDataclicked"
-        android:layout_height="70dp"
+        android:layout_height="55dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"></Button>
+        android:layout_marginTop="100dp"></Button>
     <Button
         android:id="@+id/tutor_pt_meetings"
         android:text="P-T meets"
         android:layout_below="@+id/update_child_info"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:background="#3B5998 "
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
+        android:textColor="#ffffff"
         android:onClick="PTmeetclicked"
-        android:layout_height="70dp"
+        android:layout_height="55dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"></Button>
+        android:layout_marginTop="75dp"></Button>
     <Button
         android:id="@+id/tutor_appointment"
         android:text="Appointments"
         android:onClick="SeeAppointmentclicked"
-        android:textSize="25dp"
+        android:textSize="22dp"
         android:background="#3B5998 "
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:layout_below="@+id/tutor_pt_meetings"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"></Button>
+        android:layout_marginTop="75dp"></Button>
+    <Button
+        android:id="@+id/tutor_shedule"
+        android:text="Shedule"
+        android:onClick="SendtosheduleActivity"
+        android:textSize="22dp"
+        android:background="#3B5998 "
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@+id/tutor_appointment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"></Button>
 
 
 

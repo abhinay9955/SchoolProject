@@ -32,6 +32,8 @@ public class BookActivity extends AppCompatActivity {
         progressDialog=new ProgressDialog(this);
         tutors=new ArrayList<>();
         progressDialog.setMessage("Loading...");
+        getSupportActionBar().setTitle("Parent");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         progressDialog.setCancelable(false);
         progressDialog.show();
         recyclerView=findViewById(R.id.recycler_book);
