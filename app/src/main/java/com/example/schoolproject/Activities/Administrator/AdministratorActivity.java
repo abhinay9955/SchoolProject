@@ -31,6 +31,8 @@ public class AdministratorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrator);
+        getSupportActionBar().setTitle("ADMINISTRATOR");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
 
         addchild=findViewById(R.id.addchild);
         tutor=findViewById(R.id.tutor);

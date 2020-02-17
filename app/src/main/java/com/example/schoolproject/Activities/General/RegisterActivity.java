@@ -45,6 +45,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         Initialise();
+        getSupportActionBar().setTitle("REGISTER USER");
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         loading=new ProgressDialog(this);
         mAuth=FirebaseAuth.getInstance();
         rootref=FirebaseDatabase.getInstance().getReference();

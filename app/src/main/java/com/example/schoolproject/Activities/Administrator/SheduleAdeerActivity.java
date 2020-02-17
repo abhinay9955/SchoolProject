@@ -6,14 +6,11 @@ import android.os.Bundle;
 
 import com.example.schoolproject.R;
 
-public class TutorInfo extends AppCompatActivity {
-
-
+public class SheduleAdeerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutor_info);
-
+        setContentView(R.layout.activity_shedule_adeer);
     }
 }

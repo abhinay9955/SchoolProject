@@ -2,6 +2,7 @@ package com.example.schoolproject.Utils;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.schoolproject.Activities.Administrator.SheduleAdeerActivity;
 import com.example.schoolproject.Model.TutorModel;
 import com.example.schoolproject.R;
 import com.google.firebase.database.FirebaseDatabase;
@@ -48,7 +50,10 @@ public class SheduleAdapter extends RecyclerView.Adapter<SheduleAdapter.ViewHold
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog(temp);
+                Intent intent =new Intent(ctx, SheduleAdeerActivity.class);
+                intent.putExtra("id",temp.getId());
+                ctx.startActivity(intent);
+
             }
         });
 
