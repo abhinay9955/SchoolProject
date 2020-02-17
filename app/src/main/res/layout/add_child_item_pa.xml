@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:padding="10dp"
+    android:gravity="center"
     android:background="@drawable/borderbox"
     android:id="@+id/card"
 
@@ -110,6 +111,20 @@
             android:layout_weight="1"
             android:textSize="18dp"></TextView>
     </LinearLayout>
+    <Button
+        android:id="@+id/fill_data_child"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:textColor="#ffffff"
+
+        android:textStyle="bold"
+        android:text=" FILL DATA "
+
+        android:gravity="center"
+        android:background="@drawable/gradientback3"
+
+        android:padding="2dp"
+        ></Button>
 
 
 </LinearLayout>

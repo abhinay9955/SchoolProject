@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.Administrator.SheduleAdeerActivity"></activity>
+        <activity android:name=".Activities.Tutor.FilldataChildActivity"></activity>
+        <activity android:name=".Activities.Administrator.SheduleAdeerActivity" />
         <activity android:name=".Activities.Tutor.TutorScheduleActiity" />
         <activity android:name=".Activities.Administrator.SheduleUpdateActivity" />
         <activity android:name=".Activities.Parent.BookActivity" />

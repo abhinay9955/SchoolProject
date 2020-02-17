@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradientback"
+    android:gravity="center"
+    android:padding="10dp"
+
+    tools:context=".Activities.Tutor.FilldataChildActivity">
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="NAME         :"></TextView>
+        <TextView
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:id="@+id/child_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ABHINAY BARNWAL"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Guardian name:"></TextView>
+        <TextView
+            android:textColor="#ffffff"
+            android:textAllCaps="true"
+            android:id="@+id/child_item_guardian"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ABHINAY BARNWAL"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Roll Number:"></TextView>
+        <TextView
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:id="@+id/child_item_rollno"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="20181001"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Contact no.:"></TextView>
+        <TextView
+            android:textColor="#ffffff"
+            android:textAllCaps="true"
+            android:id="@+id/child_item_contact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ABHINAY BARNWAL"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="CLASS :"></TextView>
+        <TextView
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:id="@+id/child_item_class"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="09"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="GRADE      :"></TextView>
+        <EditText
+            android:textAllCaps="true"
+            android:id="@+id/child_item_grade"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:textColor="#ffffff"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="RANK        :"></TextView>
+        <EditText
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:id="@+id/child_item_rank"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:text="Total days Present :"></TextView>
+        <EditText
+            android:textColor="#ffffff"
+            android:textAllCaps="true"
+            android:id="@+id/child_item_tdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:text="Toatal working days:"></TextView>
+        <EditText
+            android:textColor="#ffffff"
+            android:textAllCaps="true"
+            android:id="@+id/child_item_twd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="18dp"></EditText>
+    </LinearLayout>
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/filldata_button"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:textColor="#ffffff"
+
+        android:textStyle="bold"
+        android:text=" CONFIRM "
+
+        android:gravity="center"
+        android:background="@drawable/gradientback3"
+
+        android:padding="2dp"
+        ></Button>
+
+
+
+</LinearLayout>
