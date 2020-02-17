@@ -38,6 +38,8 @@ public class NewChildActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_child);
         child=new ArrayList<>();
+        spinnerdata=new HashMap<>();
+        init();
         recyclerView=findViewById(R.id.recycler_new_child);
         getSupportActionBar().setTitle("Kids :)");
         getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
@@ -52,7 +54,7 @@ public class NewChildActivity extends AppCompatActivity {
                 child=spinnerdata.get(classes[i]);
                 parentAddChildAdapter=new ParentAddChildAdapter(child);
                 recyclerView.setAdapter(parentAddChildAdapter);
-                Log.i("onItemSelected: ",child.size()+"");
+//                Log.i("onItemSelected: ",child.size()+"");
             }
 
             @Override
@@ -60,7 +62,7 @@ public class NewChildActivity extends AppCompatActivity {
                     child=spinnerdata.get(classes[0]);
             }
         });
-        spinnerdata=new HashMap<>();
+
         FirebaseDatabase.getInstance().getReference("students").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -87,5 +89,13 @@ public class NewChildActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void init()
+    {
+        spinnerdata.put(classes[0],new ArrayList<StudentModel>());
+        spinnerdata.put(classes[1],new ArrayList<StudentModel>());
+        spinnerdata.put(classes[2],new ArrayList<StudentModel>());
+        spinnerdata.put(classes[3],new ArrayList<StudentModel>());
     }
 }

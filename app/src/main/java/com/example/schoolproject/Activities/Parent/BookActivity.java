@@ -43,6 +43,7 @@ public class BookActivity extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference("Tutor").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                progressDialog.dismiss();
                tutors.clear();
                for(DataSnapshot ds:dataSnapshot.getChildren())
                {
@@ -55,7 +56,7 @@ public class BookActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                 progressDialog.dismiss();
             }
         });
     }

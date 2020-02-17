@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,14 +33,22 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
     private ArrayList<StudentModel> child;
     private UpdateChildInfoAdapter updateChildAdapter;
     private String[] classes={"Class 1","Class 2","Class 3","Class 4"};
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_child_info);
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         child=new ArrayList<>();
+        spinnerdata=new HashMap<>();
+        init();
         recyclerView=findViewById(R.id.ucirecycler_new_child);
         spinner=findViewById(R.id.ucispinner);
+        Log.i("onCreateuic: ",child.toString());
         updateChildAdapter=new UpdateChildInfoAdapter(child);
         recyclerView.setLayoutManager(new LinearLayoutManager(UpdateChildInfoActivity.this));
         recyclerView.setAdapter(updateChildAdapter);
@@ -47,22 +56,25 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                child=spinnerdata.get(classes[i]);
-                updateChildAdapter=new UpdateChildInfoAdapter(child);
+                         child=spinnerdata.get(classes[i]);
+                         updateChildAdapter=new UpdateChildInfoAdapter(child);
                 recyclerView.setAdapter(updateChildAdapter);
-               // Log.i("onItemSelected: ",child.size()+"");
+
+                //Log.i("onItemSelectedteupda: ",spinnerdata+"");
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 child=spinnerdata.get(classes[0]);
+                updateChildAdapter=new UpdateChildInfoAdapter(child);
+                recyclerView.setAdapter(updateChildAdapter);
+
             }
         });
-        spinnerdata=new HashMap<>();
+
         FirebaseDatabase.getInstance().getReference("students").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
 
 
                 spinnerdata.clear();
@@ -72,19 +84,32 @@ public class UpdateChildInfoActivity extends AppCompatActivity {
                     for(DataSnapshot dss:ds.getChildren())
                     {
                         list.add(dss.getValue(StudentModel.class));
+
                     }
+                    Log.i( "onDataChangeuci: ",list.size()+"");
                     spinnerdata.put(ds.getKey(),list);
                 }
+                updateChildAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
+                spinner.setSelection(1);
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+              progressDialog.dismiss();
             }
         });
 
 
 
+    }
+
+    public void init()
+    {
+        spinnerdata.put(classes[0],new ArrayList<StudentModel>());
+        spinnerdata.put(classes[1],new ArrayList<StudentModel>());
+        spinnerdata.put(classes[2],new ArrayList<StudentModel>());
+        spinnerdata.put(classes[3],new ArrayList<StudentModel>());
     }
 }
