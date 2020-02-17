@@ -52,6 +52,8 @@ public class SheduleAdapter extends RecyclerView.Adapter<SheduleAdapter.ViewHold
             public void onClick(View view) {
                 Intent intent =new Intent(ctx, SheduleAdeerActivity.class);
                 intent.putExtra("id",temp.getId());
+                intent.putExtra("name",temp.getName());
+                intent.putExtra("tutorid",temp.getTutorid());
                 ctx.startActivity(intent);
 
             }
