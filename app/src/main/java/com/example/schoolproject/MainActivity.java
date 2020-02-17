@@ -77,11 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Dialog dialog=new Dialog(MainActivity.this);
-                    dialog.setContentView(R.layout.item_first);
-                    dialog.setCancelable(false);
-                    dialog.show();
-
+                    AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                    builder.setMessage("Your Payment is Due!!!");
+                    builder.setCancelable(false);
+                    builder.create().show();
                 }
 
             }
