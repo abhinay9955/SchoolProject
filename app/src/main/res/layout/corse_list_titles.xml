@@ -2,14 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="3dp">
+    android:layout_height="40dp"
+    android:background="@drawable/courseback"
+    android:padding="3dp"
+    android:gravity="center">
     <TextView
         android:id="@+id/course_titles"
         android:textSize="20dp"
         android:textStyle="italic"
         android:text="Maths"
-        android:layout_marginLeft="4dp"
+        android:textAllCaps="true"
+        android:gravity="center"
+
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

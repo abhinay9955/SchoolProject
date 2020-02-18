@@ -100,10 +100,7 @@ public class Expandalelistadapter extends BaseExpandableListAdapter
         }
         TextView textView=(TextView)view.findViewById(R.id.course_titles);
         textView.setText(coursetitle);
-        Random random = new Random();
 
-        int color = Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256));
-        textView.setBackgroundColor(color);
 
         return view;
     }

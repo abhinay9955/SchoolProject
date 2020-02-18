@@ -6,23 +6,19 @@
     android:layout_height="70dp"
     android:orientation="horizontal"
     android:padding="7dp"
+
     >
     <TextView
         android:id="@+id/class_titles"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:padding="7dp"
-        android:text="hii"
+        android:text="class"
+        android:textAllCaps="true"
         android:textSize="25dp"
         android:textStyle="bold"
         />
 
-    <ImageView
 
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:src="@drawable/dropdown"
-        android:layout_gravity="right"
-        android:layout_marginRight="6dp"/>
 
 </LinearLayout>

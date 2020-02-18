@@ -8,14 +8,7 @@
     android:background="@drawable/gradientback"
     tools:context=".Activities.General.CoursesActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:text="Courses.."
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:padding="15dp"
-        ></TextView>
+
     <ExpandableListView
         android:id="@+id/exp_listview"
         android:layout_width="match_parent"
