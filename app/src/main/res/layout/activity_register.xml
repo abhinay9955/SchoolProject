@@ -170,7 +170,7 @@
         android:layout_below="@+id/datalayout"
         android:layout_centerInParent="true"
         android:layout_marginTop="60dp"
-        android:background="#3B5998 "
+        android:background="@drawable/gradientback3"
         android:text="Register"
         android:textSize="20dp"
         android:textStyle="bold"></Button>
