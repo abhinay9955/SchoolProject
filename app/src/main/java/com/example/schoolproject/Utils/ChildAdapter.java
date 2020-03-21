@@ -1,15 +1,18 @@
 package com.example.schoolproject.Utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.schoolproject.Activities.Parent.GraphActivity;
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
 
@@ -49,7 +52,12 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder>
         holder.vhchildgrade.setText((modeltemp.getGrade()==-1?"N/A":modeltemp.getGrade()+""));
         holder.vhchildcontact.setText(modeltemp.getContact());
         holder.vhchildclass.setText(modeltemp.getStd());
-
+        holder.graph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ctx.startActivity(new Intent(ctx, GraphActivity.class));
+            }
+        });
 
 
 
@@ -66,6 +74,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder>
 
         public TextView vhchildname,vhchildparenntname,vhchildcontact,vhchildID,vhchildroll,vhchildgrade,vhchildtwd,vhchildtpd,vhchildclass,
                         vhchildrank;
+        Button graph;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -79,6 +88,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder>
             vhchildtpd =(TextView) itemView.findViewById(R.id.child_item_tdp);
             vhchildtwd =(TextView) itemView.findViewById(R.id.child_item_twd);
             vhchildrank =(TextView) itemView.findViewById(R.id.child_item_rank);
+            graph=itemView.findViewById(R.id.graph);
         }
     }
 }
