@@ -122,7 +122,7 @@ public class AdminstratorPTAActivity extends AppCompatActivity {
                         date.set(Calendar.MINUTE, minute);
                         // Log.v(TAG, "The choosen one " + date.getTime());
                         // Toast.makeText(getContext(),"The choosen one " + date.getTime(),Toast.LENGTH_SHORT).show();
-                        time_tv.setText(new SimpleDateFormat("dd-MMM-yyyy h:mm a").format(date.getTime()));
+                        time_tv.setText(new SimpleDateFormat("dd-MMM-yyyy hh:mm a").format(date.getTime()));
                     }
                 },currentDate.get(Calendar.HOUR_OF_DAY), currentDate.get(Calendar.MINUTE), false).show();
 

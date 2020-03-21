@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -44,7 +46,12 @@ public class PtmActivity extends AppCompatActivity {
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     PTModel pt=ds.getValue(PTModel.class);
-                    Date date=new Date(pt.getTime());
+                    Date date= null;
+                    try {
+                        date = new SimpleDateFormat("dd-MMM-yyyy hh:mm a").parse(pt.getTime());
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                     Log.i("onDataChange: ",cur.toString()+" / "+date.toString());
                     if(date.after(cur))
                        data.add(pt);

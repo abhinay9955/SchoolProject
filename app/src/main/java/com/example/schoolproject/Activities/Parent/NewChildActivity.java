@@ -42,7 +42,7 @@ public class NewChildActivity extends AppCompatActivity {
         spinnerdata=new HashMap<>();
         init();
         recyclerView=findViewById(R.id.recycler_new_child);
-        getSupportActionBar().setTitle("Kids :)");
+        getSupportActionBar().setTitle("Students");
         getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradientback2));
         spinner=findViewById(R.id.spinner);
         parentAddChildAdapter=new ParentAddChildAdapter(child);

@@ -62,12 +62,12 @@ public class RegisterActivity extends AppCompatActivity {
     private void registerUser()
     {
         final String  name,email,password1,password2,tutorid,contact;
-        name=username.getText().toString();
-        email=useremail.getText().toString();
-        password1=userpassword.getText().toString();
-        password2=confirmpassword.getText().toString();
-        contact=contactno.getText().toString();
-        tutorid=TutorID.getText().toString();
+        name=username.getText().toString().trim();
+        email=useremail.getText().toString().trim();
+        password1=userpassword.getText().toString().trim();
+        password2=confirmpassword.getText().toString().trim();
+        contact=contactno.getText().toString().trim();
+        tutorid=TutorID.getText().toString().trim();
         if(TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password1) || TextUtils.isEmpty(contact) || TextUtils.isEmpty(password2) || (TutorID.isEnabled() && TextUtils.isEmpty(TutorID.getText().toString())))
         {
             Toast.makeText(this, "Fill the fields properly", Toast.LENGTH_SHORT).show();
@@ -85,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
                     loading.setCanceledOnTouchOutside(true);
                     loading.show();
 
-                    mAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    mAuth.createUserWithEmailAndPassword(email.trim(),password1.trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task)
                         {
@@ -111,7 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 {
                                     HashMap<String,Object> data=new HashMap<>();
                                     data.put("name",username.getText().toString().trim());
-                                    data.put("email",email);
+                                    data.put("email",email.trim());
                                     data.put("tutorid",TutorID.getText().toString());
                                     data.put("contact",contact);
 

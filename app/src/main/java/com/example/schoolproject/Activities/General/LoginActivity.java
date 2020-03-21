@@ -27,6 +27,7 @@ import com.example.schoolproject.Activities.Administrator.AdministratorActivity;
 import com.example.schoolproject.Activities.Parent.ParentActivity;
 import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.example.schoolproject.R;
+import com.example.schoolproject.Utils.AppConstants;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -97,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         else
         {
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(email.trim(),password.trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task)
                 {     Log.i( "onComplete: ","logg");
@@ -180,7 +181,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(!TextUtils.isEmpty(email.getText().toString()))
-                {FirebaseAuth.getInstance().sendPasswordResetEmail(email.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                {FirebaseAuth.getInstance().sendPasswordResetEmail(email.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful())
@@ -207,7 +208,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void websiteclicked(View view) {
-        Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+              Intent intent=new Intent(Intent.ACTION_VIEW);
+              intent.setData(Uri.parse(AppConstants.WEBSITE_URL));
+              startActivity(intent);
     }
 
     public void contactclicked(View view) {
