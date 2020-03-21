@@ -38,7 +38,7 @@ public class MapActivity extends AppCompatActivity {
             public void onMapReady(GoogleMap googleMap) {
                 gmap = googleMap;
                 gmap.setMinZoomPreference(12);
-                LatLng ny = new LatLng(40.7143528, -74.0059731);
+                LatLng ny = new LatLng(-33.868406, 151.088622);
                 gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
             }
         });

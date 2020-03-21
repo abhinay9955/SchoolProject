@@ -26,8 +26,16 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="kumarranasinghvidyalaya420@gmail.com"
-                android:textSize="18sp" />
+                android:text="info@newcollege.com.au"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:tint="#C92626"
+                app:srcCompat="@android:drawable/sym_action_email" />
         </LinearLayout>
 
         <LinearLayout
@@ -43,8 +51,16 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="8822334455"
+                android:text="(02) 97466999"
                 android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:tint="#046D54"
+                app:srcCompat="@android:drawable/ic_menu_call" />
         </LinearLayout>
 
         <TextView
