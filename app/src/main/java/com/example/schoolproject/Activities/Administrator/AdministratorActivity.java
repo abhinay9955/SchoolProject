@@ -3,6 +3,7 @@ package com.example.schoolproject.Activities.Administrator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolproject.Activities.General.AcademicActivity;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
@@ -103,6 +105,10 @@ public class AdministratorActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
 
+        }
+        if(item.getItemId()==R.id.academic)
+        {
+            startActivity(new Intent(AdministratorActivity.this, AcademicActivity.class));
         }
         if(item.getItemId()==R.id.newsign_out)
         {

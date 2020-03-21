@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolproject.Activities.General.AcademicActivity;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
@@ -178,6 +179,10 @@ public class ParentActivity extends AppCompatActivity {
             Intent intent=new Intent(this, CoursesActivity.class);
             startActivity(intent);
 
+        }
+        if(item.getItemId()==R.id.academic)
+        {
+            startActivity(new Intent(ParentActivity.this, AcademicActivity.class));
         }
         if(item.getItemId()==R.id.newlocation)
         {

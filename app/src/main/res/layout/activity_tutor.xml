@@ -8,21 +8,23 @@
     android:background="@drawable/gradientback"
     android:padding="20dp"
     >
+
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_height="342dp"
         android:layout_marginTop="40dp"
-        android:src="@drawable/logo"
-        android:id="@+id/logo"></ImageView>
+        android:src="@drawable/logo"></ImageView>
 
     <LinearLayout
-        android:layout_below="@+id/logo"
-        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="113dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        android:gravity="center_horizontal">
+        android:paddingHorizontal="20dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="75dp"
@@ -30,66 +32,63 @@
             android:weightSum="2"
 
             >
+
             <Button
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
-                android:background="@drawable/button3grad"
+                android:layout_weight="1"
+                android:background="#3B5998 "
                 android:onClick="ChildDataclicked"
                 android:text="update Child"
-                android:textSize="19dp"
-                android:textColor="#ffffff"
-                android:layout_weight="1"
-                ></Button>
+                android:textColor="#E7E9EC"
+                android:textSize="19dp"></Button>
+
             <Button
                 android:layout_width="120dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:background="@drawable/button3grad"
+                android:layout_weight="1"
+                android:background="#3B5998 "
                 android:onClick="PTmeetclicked"
                 android:text="P-T Meets"
-                android:textSize="19dp"
                 android:textColor="#ffffff"
-                ></Button>
+                android:textSize="19dp"></Button>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="75dp"
+            android:layout_marginTop="10dp"
             android:padding="3dp"
             android:weightSum="2"
-            android:layout_marginTop="10dp"
 
             >
+
             <Button
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
-                android:onClick="SeeAppointmentclicked"
-                android:layout_width="120dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/button3grad"
-                android:text="Appointments"
                 android:layout_weight="1"
-                android:textSize="19dp"
+                android:background="#3B5998 "
+                android:onClick="SeeAppointmentclicked"
+                android:text="Appointments"
                 android:textColor="#ffffff"
-                ></Button>
+                android:textSize="19dp"></Button>
+
             <Button
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/button3grad"
-                android:text="Shedule"
-                android:onClick="SendtosheduleActivity"
-                android:textSize="19dp"
-                android:textColor="#ffffff"
                 android:layout_weight="1"
-                ></Button>
+                android:background="#3B5998 "
+                android:onClick="SendtosheduleActivity"
+                android:text="Shedule"
+                android:textColor="#ffffff"
+                android:textSize="19dp"></Button>
 
         </LinearLayout>
 
     </LinearLayout>
-
-
-
-
 
 
 </RelativeLayout>

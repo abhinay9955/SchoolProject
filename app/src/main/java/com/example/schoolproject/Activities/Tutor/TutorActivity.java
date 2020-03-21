@@ -3,6 +3,7 @@ package com.example.schoolproject.Activities.Tutor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +13,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolproject.Activities.General.AcademicActivity;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
+import com.example.schoolproject.Activities.Parent.ParentActivity;
 import com.example.schoolproject.Activities.Parent.PtmActivity;
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -49,6 +52,10 @@ public class TutorActivity extends AppCompatActivity {
             Intent intent=new Intent(this, CoursesActivity.class);
             startActivity(intent);
 
+        }
+        if(item.getItemId()==R.id.academic)
+        {
+            startActivity(new Intent(TutorActivity.this, AcademicActivity.class));
         }
 
         if(item.getItemId()==R.id.newlocation)

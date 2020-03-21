@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Activities.General.ui.AcademicActivity"></activity>
+        <activity android:name=".Activities.General.AcademicActivity" android:screenOrientation="portrait"></activity>
 
 
 
-        <activity android:name=".Activities.Administrator.SheduleUpdateActivity" />
+        <activity android:name=".Activities.Administrator.SheduleUpdateActivity" android:screenOrientation="portrait" />
 
         <activity android:name=".Activities.Tutor.FilldataChildActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".Activities.Administrator.SheduleAdeerActivity" android:screenOrientation="portrait" />
