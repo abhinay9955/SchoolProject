@@ -6,6 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".Activities.General.LoginActivity"
     android:background="@drawable/gradientback">
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:padding="3dp"
+            android:weightSum="2"
+
+            >
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/button1grad"
+                android:onClick="coursesbuttonclicked"
+                android:text="COURSES"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                ></Button>
+            <Button
+                android:layout_width="120dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/button2grad"
+                android:onClick="websiteclicked"
+                android:text="WEBSITE"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                ></Button>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:padding="3dp"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+
+            >
+            <Button
+                android:layout_marginHorizontal="10dp"
+                android:onClick="contactclicked"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button3grad"
+                android:text="CONTACT"
+                android:layout_weight="1"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                ></Button>
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button4grad"
+                android:text="LOCATE US"
+                android:onClick="locateusclicked"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                ></Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/loginemail"
@@ -15,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
 
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="230dp"
         android:layout_marginHorizontal="30dp"
         android:background="@drawable/borderbox"></EditText>
     <EditText

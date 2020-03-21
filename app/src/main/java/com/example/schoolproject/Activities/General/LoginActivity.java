@@ -153,50 +153,8 @@ public class LoginActivity extends AppCompatActivity {
         loginbutton=(Button) findViewById(R.id.loginbutton);
         createuser=findViewById(R.id.register);
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.menu_options,menu);
-        return true;
-
-    }
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
-        if(item.getItemId()==R.id.course)
-        {
-            Intent intent=new Intent(this, CoursesActivity.class);
-            startActivity(intent);
-
-        }
-        if(item.getItemId()==R.id.location)
-        {
-             startActivity(new Intent(LoginActivity.this, MapActivity.class));
-        }
-        if(item.getItemId()==R.id.contact)
-        {
-            final Dialog dialog=new Dialog(LoginActivity.this);
-            dialog.setContentView(R.layout.contact_dialog);
-            TextView ok;
-            ok=dialog.findViewById(R.id.ok);
-            ok.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            dialog.show();
 
 
-        }
-        if(item.getItemId()==R.id.website)
-        {
-            Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
-
-        }
-
-        return true;
-    }
 
     public void opendialogue(View view)
 
@@ -235,5 +193,33 @@ public class LoginActivity extends AppCompatActivity {
         d.show();
 
 
+    }
+
+    public void coursesbuttonclicked(View view) {
+        Intent intent=new Intent(this, CoursesActivity.class);
+        startActivity(intent);
+    }
+
+    public void websiteclicked(View view) {
+        Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+    }
+
+    public void contactclicked(View view) {
+        final Dialog dialog=new Dialog(LoginActivity.this);
+        dialog.setContentView(R.layout.contact_dialog);
+        TextView ok;
+        ok=dialog.findViewById(R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+
+    }
+
+    public void locateusclicked(View view) {
+        startActivity(new Intent(LoginActivity.this, MapActivity.class));
     }
 }
