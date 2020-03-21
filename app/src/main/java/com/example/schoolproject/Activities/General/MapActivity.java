@@ -10,6 +10,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapActivity extends AppCompatActivity {
 
@@ -33,12 +34,17 @@ public class MapActivity extends AppCompatActivity {
 
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(mapViewBundle);
+
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 gmap = googleMap;
                 gmap.setMinZoomPreference(12);
-                LatLng ny = new LatLng(40.7143528, -74.0059731);
+
+                LatLng ny = new LatLng(-33.868406, 151.088622);
+                googleMap.addMarker(new MarkerOptions().position(ny)
+                        .title("Pre-Uni New College Head Office"));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLng(ny));
                 gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
             }
         });
@@ -89,5 +95,7 @@ public class MapActivity extends AppCompatActivity {
         super.onLowMemory();
         mapView.onLowMemory();
     }
+
+
 
 }

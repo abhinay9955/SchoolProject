@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:elevation="8dp"
@@ -11,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -230,13 +233,24 @@
             <TextView
                 android:textColor="#ffffff"
                 android:textAllCaps="true"
-                android:id="@+id/child_item_roll"
+                android:id="@+id/child_item_contact"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="ABHINAY BARNWAL"
                 android:gravity="center_vertical"
                 android:layout_weight="1"
                 android:textSize="18dp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:text="Click here for detail analysis"
+                android:layout_height="match_parent"></Button>
         </LinearLayout>
 
 
