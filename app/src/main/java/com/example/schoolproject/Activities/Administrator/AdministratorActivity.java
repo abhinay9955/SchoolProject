@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
-import com.example.schoolproject.Activities.General.ui.AcademicActivity;
 import com.example.schoolproject.Activities.Parent.ParentActivity;
 import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.example.schoolproject.R;
@@ -98,12 +97,6 @@ public class AdministratorActivity extends AppCompatActivity {
             });
             dialog.show();
 
-
-        }
-        if(item.getItemId()==R.id.academiccalendar)
-        {
-            Intent intent=new Intent(this, AcademicActivity.class);
-            startActivity(intent);
 
         }
         if(item.getItemId()==R.id.newwebsite)

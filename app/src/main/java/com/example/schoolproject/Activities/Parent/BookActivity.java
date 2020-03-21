@@ -47,7 +47,7 @@ public class BookActivity extends AppCompatActivity {
                tutors.clear();
                for(DataSnapshot ds:dataSnapshot.getChildren())
                {
-                   ParentAppointmentModel pam=new ParentAppointmentModel(ds.child("name").getValue(String.class),ds.child("tutorid").getValue(String.class),ds.getKey());
+                   ParentAppointmentModel pam=new ParentAppointmentModel(ds.child("name").getValue(String.class),ds.child("tutorid").getValue(String.class),ds.getKey(),ds.child("contact").getValue(String.class));
                    tutors.add(pam);
                }
                adapter.notifyDataSetChanged();
