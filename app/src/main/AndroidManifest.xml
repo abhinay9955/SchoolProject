@@ -9,30 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.Tutor.FilldataChildActivity"></activity>
-        <activity android:name=".Activities.Administrator.SheduleAdeerActivity" />
-        <activity android:name=".Activities.Tutor.TutorScheduleActiity" />
-        <activity android:name=".Activities.Administrator.SheduleUpdateActivity" />
+        <activity android:name=".Activities.Tutor.FilldataChildActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Activities.Administrator.SheduleAdeerActivity" android:screenOrientation="portrait" />
+        <activity android:name=".Activities.Tutor.TutorScheduleActiity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Administrator.SheduleUpdateActivity" android:screenOrientation="portrait"/>
         <activity android:name=".Activities.Parent.BookActivity" />
-        <activity android:name=".Activities.Tutor.UpdateChildInfoActivity" />
-        <activity android:name=".Activities.Tutor.TutorAppointmentActivity" />
-        <activity android:name=".Activities.Parent.NewChildActivity" />
-        <activity android:name=".Activities.Parent.PtmActivity" />
-        <activity android:name=".Activities.General.CoursesActivity" />
-        <activity android:name=".Activities.Administrator.AddChildActivity" />
-        <activity android:name=".Activities.Tutor.TutorActivity" />
-        <activity android:name=".Activities.Administrator.AdminstratorPTAActivity" />
+        <activity android:name=".Activities.Tutor.UpdateChildInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Tutor.TutorAppointmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Parent.NewChildActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Parent.PtmActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.General.CoursesActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Administrator.AddChildActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Tutor.TutorActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Administrator.AdminstratorPTAActivity" android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAf4f6skCx_sv5mtWFfgkiiXmsoKoIflMU" />
 
-        <activity android:name=".Activities.General.MapActivity" />
-        <activity android:name=".Activities.Administrator.AdministratorActivity" />
-        <activity android:name=".Activities.Parent.ParentActivity" />
-        <activity android:name=".Activities.General.RegisterActivity" />
-        <activity android:name=".Activities.General.LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.General.MapActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Administrator.AdministratorActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.Parent.ParentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.General.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.General.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
