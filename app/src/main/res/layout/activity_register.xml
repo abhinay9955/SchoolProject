@@ -113,6 +113,7 @@
                 android:layout_weight="3"
                 android:background="@drawable/borderbox"
                 android:hint="Enter password"
+                android:inputType="textPassword"
                 android:paddingLeft="10dp"></EditText>
         </LinearLayout>
         <LinearLayout
@@ -128,6 +129,7 @@
                 android:layout_weight="3"
                 android:background="@drawable/borderbox"
                 android:hint="Confirm Password"
+                android:inputType="textPassword"
                 android:paddingLeft="10dp"></EditText>
         </LinearLayout>
         <LinearLayout

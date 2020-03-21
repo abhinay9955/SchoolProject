@@ -88,22 +88,23 @@
         android:layout_marginTop="230dp"
         android:layout_marginHorizontal="30dp"
         android:background="@drawable/borderbox"></EditText>
+
     <EditText
-        android:padding="5dp"
         android:id="@+id/loginpassworduser"
-        android:hint="Enter your password"
-        android:gravity="center_vertical"
-
-
-
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_below="@+id/loginemail"
 
-        android:layout_marginTop="50dp"
-        android:layout_marginHorizontal="30dp"
 
-        android:background="@drawable/borderbox"></EditText>
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/borderbox"
+
+        android:gravity="center_vertical"
+        android:hint="Enter your password"
+
+        android:inputType="textWebPassword"
+        android:padding="5dp"></EditText>
 
     <Button
         android:id="@+id/loginbutton"

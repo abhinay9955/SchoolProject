@@ -16,7 +16,10 @@ import android.widget.Toast;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
+
 import com.example.schoolproject.Activities.General.AcademicActivity;
+
+
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -98,12 +101,6 @@ public class AdministratorActivity extends AppCompatActivity {
 
 
         }
-        if(item.getItemId()==R.id.academiccalendar)
-        {
-            Intent intent=new Intent(this, AcademicActivity.class);
-            startActivity(intent);
-
-        }
         if(item.getItemId()==R.id.newwebsite)
         {
             Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
@@ -116,6 +113,10 @@ public class AdministratorActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
 
+        }
+        if(item.getItemId()==R.id.academic) {
+            Intent intent = new Intent(AdministratorActivity.this, AcademicActivity.class);
+            startActivity(intent);
         }
 
 

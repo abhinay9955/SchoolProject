@@ -20,7 +20,9 @@ import android.widget.Toast;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
+
 import com.example.schoolproject.Activities.General.AcademicActivity;
+
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -199,12 +201,14 @@ public class ParentActivity extends AppCompatActivity {
 
 
         }
-        if(item.getItemId()==R.id.academic)
-        {
-            Intent intent=new Intent(ParentActivity.this, AcademicActivity.class);
-            startActivity(intent);
 
+        if(item.getItemId()==R.id.academic) {
+            Intent intent = new Intent(ParentActivity.this, AcademicActivity.class);
+            startActivity(intent);
         }
+
+
+
         if(item.getItemId()==R.id.newwebsite)
         {
             Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
@@ -213,8 +217,8 @@ public class ParentActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.newsign_out)
         {
             mAuth.signOut();
-            Intent intent=new Intent(ParentActivity.this, LoginActivity.class);
-            startActivity(intent);
+            Intent intent1=new Intent(ParentActivity.this, LoginActivity.class);
+            startActivity(intent1);
             finish();
 
         }

@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                                 {
                                     startActivity(new Intent(LoginActivity.this, ParentActivity.class));
                                     finish();
-                                    
+
                                 }
                                 else if(type.equals("Tutor"))
                                 {
@@ -253,25 +253,5 @@ public class LoginActivity extends AppCompatActivity {
 
     public void locateusclicked(View view) {
         startActivity(new Intent(LoginActivity.this, MapActivity.class));
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.calendarmenu,menu);
-        return true;
-
-    }
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
-        if(item.getItemId()==R.id.academiccalendar)
-        {
-            Intent intent=new Intent(this, AcademicActivity.class);
-            startActivity(intent);
-
-        }
-
-        return true;
-
     }
 }

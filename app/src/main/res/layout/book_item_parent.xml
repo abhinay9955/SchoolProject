@@ -40,7 +40,9 @@
                 android:padding="10dp"
                 android:layout_weight="1"
                 android:textSize="18dp"></TextView>
+
             <ImageView
+                android:id="@+id/call"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/callicon"></ImageView>
