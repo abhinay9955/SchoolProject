@@ -8,53 +8,84 @@
     android:background="@drawable/gradientback"
     android:padding="20dp"
     >
-    <Button
-        android:id="@+id/update_child_info"
-        android:text="Update Child"
-        android:textSize="22dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/gradientback3"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/logo"
+        android:id="@+id/logo"></ImageView>
+
+    <LinearLayout
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
-        android:onClick="ChildDataclicked"
-        android:layout_height="55dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"></Button>
-    <Button
-        android:id="@+id/tutor_pt_meetings"
-        android:text="P-T meets"
-        android:layout_below="@+id/update_child_info"
-        android:textSize="22dp"
-        android:background="@drawable/gradientback3"
-        android:layout_width="match_parent"
-        android:textColor="#ffffff"
-        android:onClick="PTmeetclicked"
-        android:layout_height="55dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"></Button>
-    <Button
-        android:id="@+id/tutor_appointment"
-        android:text="Appointments"
-        android:onClick="SeeAppointmentclicked"
-        android:textSize="22dp"
-        android:background="@drawable/gradientback3"
-        android:textColor="#ffffff"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_below="@+id/tutor_pt_meetings"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"></Button>
-    <Button
-        android:id="@+id/tutor_shedule"
-        android:text="Shedule"
-        android:onClick="SendtosheduleActivity"
-        android:textSize="22dp"
-        android:background="@drawable/gradientback3"
-        android:textColor="#ffffff"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_below="@+id/tutor_appointment"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"></Button>
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:padding="3dp"
+            android:weightSum="2"
+
+            >
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/button3grad"
+                android:onClick="ChildDataclicked"
+                android:text="update Child"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                ></Button>
+            <Button
+                android:layout_width="120dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/button3grad"
+                android:onClick="PTmeetclicked"
+                android:text="P-T Meets"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                ></Button>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:padding="3dp"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+
+            >
+            <Button
+                android:layout_marginHorizontal="10dp"
+                android:onClick="SeeAppointmentclicked"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button3grad"
+                android:text="Appointments"
+                android:layout_weight="1"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                ></Button>
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button3grad"
+                android:text="Shedule"
+                android:onClick="SendtosheduleActivity"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                ></Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 
