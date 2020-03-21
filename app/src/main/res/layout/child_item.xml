@@ -54,7 +54,7 @@
             <TextView
                 android:textAllCaps="true"
                 android:textColor="#ffffff"
-                android:id="@+id/child_item_class"
+                android:id="@+id/child_item_roll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="20181001"

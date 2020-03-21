@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
+import com.example.schoolproject.Activities.General.ui.AcademicActivity;
 import com.example.schoolproject.Activities.Parent.PtmActivity;
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,6 +48,12 @@ public class TutorActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.newcourse)
         {
             Intent intent=new Intent(this, CoursesActivity.class);
+            startActivity(intent);
+
+        }
+        if(item.getItemId()==R.id.academiccalendar)
+        {
+            Intent intent=new Intent(this, AcademicActivity.class);
             startActivity(intent);
 
         }

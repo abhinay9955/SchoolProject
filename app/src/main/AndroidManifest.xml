@@ -4,12 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.Tutor.FilldataChildActivity"></activity>
+        <activity android:name=".Activities.General.ui.AcademicActivity"></activity>
+        <activity android:name=".Activities.Tutor.FilldataChildActivity" />
         <activity android:name=".Activities.Administrator.SheduleAdeerActivity" />
         <activity android:name=".Activities.Tutor.TutorScheduleActiity" />
         <activity android:name=".Activities.Administrator.SheduleUpdateActivity" />

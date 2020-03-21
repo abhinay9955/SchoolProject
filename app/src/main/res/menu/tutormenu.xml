@@ -8,6 +8,8 @@
         android:title="Contact"></item>
     <item android:id="@+id/newlocation"
         android:title="Locate us"></item>
+    <item android:id="@+id/academic"
+        android:title="Academic Calendar"></item>
     <item android:id="@+id/newsign_out"
         android:title="Sign Out"></item>
 

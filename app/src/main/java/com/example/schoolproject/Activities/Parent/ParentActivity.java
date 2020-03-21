@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
+import com.example.schoolproject.Activities.General.ui.AcademicActivity;
 import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
@@ -197,6 +198,12 @@ public class ParentActivity extends AppCompatActivity {
             });
             dialog.show();
 
+
+        }
+        if(item.getItemId()==R.id.academiccalendar)
+        {
+            Intent intent=new Intent(this, AcademicActivity.class);
+            startActivity(intent);
 
         }
         if(item.getItemId()==R.id.newwebsite)
