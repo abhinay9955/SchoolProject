@@ -18,8 +18,10 @@ import com.example.schoolproject.Activities.General.AcademicActivity;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
-import com.example.schoolproject.Activities.Parent.ParentActivity;
-import com.example.schoolproject.Activities.Tutor.TutorActivity;
+
+import com.example.schoolproject.Activities.General.AcademicActivity;
+
+
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -117,6 +119,10 @@ public class AdministratorActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
 
+        }
+        if(item.getItemId()==R.id.academic) {
+            Intent intent = new Intent(AdministratorActivity.this, AcademicActivity.class);
+            startActivity(intent);
         }
 
 

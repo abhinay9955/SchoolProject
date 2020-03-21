@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+<<<<<<< HEAD
         <activity android:name=".Activities.General.AcademicActivity" android:screenOrientation="portrait"></activity>
+=======
+        <activity android:name=".Activities.General.AcademicActivity"></activity>
+>>>>>>> f41291435edfd7cf6852ee30708755a1cdfa4654
 
 
 
