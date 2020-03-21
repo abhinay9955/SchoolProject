@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +24,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.schoolproject.Activities.Administrator.AdministratorActivity;
-import com.example.schoolproject.Activities.General.ui.AcademicActivity;
 import com.example.schoolproject.Activities.Parent.ParentActivity;
 import com.example.schoolproject.Activities.Tutor.TutorActivity;
 import com.example.schoolproject.R;

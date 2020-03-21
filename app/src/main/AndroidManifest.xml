@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Activities.General.ui.AcademicActivity"></activity>
+        <activity android:name=".Activities.General.AcademicActivity"></activity>
 
 
 

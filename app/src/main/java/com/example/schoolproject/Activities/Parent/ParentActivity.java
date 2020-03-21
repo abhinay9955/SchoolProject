@@ -20,8 +20,7 @@ import android.widget.Toast;
 import com.example.schoolproject.Activities.General.CoursesActivity;
 import com.example.schoolproject.Activities.General.LoginActivity;
 import com.example.schoolproject.Activities.General.MapActivity;
-import com.example.schoolproject.Activities.General.ui.AcademicActivity;
-import com.example.schoolproject.Activities.Tutor.TutorActivity;
+import com.example.schoolproject.Activities.General.AcademicActivity;
 import com.example.schoolproject.Model.StudentModel;
 import com.example.schoolproject.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -200,9 +199,9 @@ public class ParentActivity extends AppCompatActivity {
 
 
         }
-        if(item.getItemId()==R.id.academiccalendar)
+        if(item.getItemId()==R.id.academic)
         {
-            Intent intent=new Intent(this, AcademicActivity.class);
+            Intent intent=new Intent(ParentActivity.this, AcademicActivity.class);
             startActivity(intent);
 
         }
