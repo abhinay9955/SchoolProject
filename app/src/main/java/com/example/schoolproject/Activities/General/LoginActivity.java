@@ -5,15 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -207,8 +214,32 @@ public class LoginActivity extends AppCompatActivity {
     public void contactclicked(View view) {
         final Dialog dialog=new Dialog(LoginActivity.this);
         dialog.setContentView(R.layout.contact_dialog);
+        ImageView mail,call;
         TextView ok;
         ok=dialog.findViewById(R.id.ok);
+        mail=dialog.findViewById(R.id.mail);
+        call=dialog.findViewById(R.id.call);
+        mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager mng=(ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData data=ClipData.newPlainText("mail","info@newcollege.com.au");
+                mng.setPrimaryClip(data);
+                Toast.makeText(LoginActivity.this, "Email copied to Clipboard", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String posted_by = "(02) 97466999";
+
+                String uri = "tel:" + posted_by.trim() ;
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(uri));
+                startActivity(intent);
+            }
+        });
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -216,6 +247,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+        Window window=dialog.getWindow();
+        window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
     }
 
